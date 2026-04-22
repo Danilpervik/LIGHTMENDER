@@ -22,7 +22,7 @@ namespace WinFormsApp2.Model.Entities
 
         public Rectangle GetBounds()
         {
-            return new Rectangle(X, Y, Width, Height);
+            return new Rectangle((int)X, (int)Y, (int)Width, (int)Height);
         }
     }
 }

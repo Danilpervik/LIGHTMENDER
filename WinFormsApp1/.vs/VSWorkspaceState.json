@@ -1,10 +1,15 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Controller",
     "\\Model",
     "\\Model\\Entities",
+    "\\Model\\Physics",
+    "\\Model\\Systems",
+    "\\Model\\World",
+    "\\Utils",
     "\\View"
   ],
-  "SelectedNode": "\\WinFormsApp1.csproj",
+  "SelectedNode": "\\Model\\Entities\\Platform.cs",
   "PreviewInSolutionExplorer": false
 }

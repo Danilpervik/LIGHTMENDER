@@ -3,6 +3,72 @@
   "WorkspaceRootPath": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|c:\\users\\danil\\desktop\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\lightmender\\winformsapp1\\model\\entities\\gameobjects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|solutionrelative:model\\entities\\gameobjects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (15)\\Model\\Entities\\GameObject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|c:\\users\\danil\\desktop\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\lightmender\\winformsapp1\\model\\entities\\ientity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|solutionrelative:model\\entities\\ientity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (15)\\Model\\Entities\\IEntity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|c:\\users\\danil\\desktop\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\lightmender\\winformsapp1\\model\\systems\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|solutionrelative:model\\systems\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|c:\\users\\danil\\desktop\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\lightmender\\winformsapp1\\model\\systems\\lightradiuscalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|solutionrelative:model\\systems\\lightradiuscalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|c:\\users\\danil\\desktop\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\lightmender\\winformsapp1\\model\\systems\\energysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|solutionrelative:model\\systems\\energysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|c:\\users\\danil\\desktop\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\lightmender\\winformsapp1\\model\\physics\\collisiondetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|solutionrelative:model\\physics\\collisiondetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|c:\\users\\danil\\desktop\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\lightmender\\winformsapp1\\model\\physics\\gravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|solutionrelative:model\\physics\\gravity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|c:\\users\\danil\\desktop\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\lightmender\\winformsapp1\\model\\world\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|solutionrelative:model\\world\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|c:\\users\\danil\\desktop\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\lightmender\\winformsapp1\\model\\world\\levelloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|solutionrelative:model\\world\\levelloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|c:\\users\\danil\\desktop\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\lightmender\\winformsapp1\\model\\world\\level.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|solutionrelative:model\\world\\level.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|c:\\users\\danil\\desktop\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\lightmender\\winformsapp1\\model\\entities\\energyorb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|solutionrelative:model\\entities\\energyorb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|c:\\users\\danil\\desktop\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\lightmender\\winformsapp1\\model\\entities\\lightswitch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|solutionrelative:model\\entities\\lightswitch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|c:\\users\\danil\\desktop\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\lightmender\\winformsapp1\\model\\entities\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|solutionrelative:model\\entities\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|c:\\users\\danil\\desktop\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\lightmender\\winformsapp1\\model\\entities\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|solutionrelative:model\\entities\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|c:\\users\\danil\\desktop\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\lightmender\\winformsapp1\\model\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|solutionrelative:model\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\UIRenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -51,7 +117,7 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\Controller\\GameController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|c:\\users\\danil\\desktop\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\lightmender\\winformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{26891A2B-1C46-426C-AEFE-93FD9257B000}|WinFormsApp1.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -62,226 +128,228 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "InputHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\Controller\\InputHandler.cs",
-              "RelativeDocumentMoniker": "..\\Controller\\InputHandler.cs",
-              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\Controller\\InputHandler.cs",
-              "RelativeToolTip": "..\\Controller\\InputHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T17:08:32.163Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "GameLoopTimer.cs",
-              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\Controller\\GameLoopTimer.cs",
-              "RelativeDocumentMoniker": "..\\Controller\\GameLoopTimer.cs",
-              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\Controller\\GameLoopTimer.cs",
-              "RelativeToolTip": "..\\Controller\\GameLoopTimer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T17:08:32.097Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "GameController.cs",
-              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\Controller\\GameController.cs",
-              "RelativeDocumentMoniker": "..\\Controller\\GameController.cs",
-              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\Controller\\GameController.cs",
-              "RelativeToolTip": "..\\Controller\\GameController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T17:08:32.028Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UIRenderer.cs",
-              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\UIRenderer.cs",
-              "RelativeDocumentMoniker": "..\\View\\UIRenderer.cs",
-              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\UIRenderer.cs",
-              "RelativeToolTip": "..\\View\\UIRenderer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "GameObjects.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Entities\\GameObjects.cs",
+              "RelativeDocumentMoniker": "Model\\Entities\\GameObjects.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Entities\\GameObjects.cs",
+              "RelativeToolTip": "Model\\Entities\\GameObjects.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T17:08:31.961Z",
+              "WhenOpened": "2026-04-22T17:27:29.548Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Renderer.cs",
-              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\Renderer.cs",
-              "RelativeDocumentMoniker": "..\\View\\Renderer.cs",
-              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\Renderer.cs",
-              "RelativeToolTip": "..\\View\\Renderer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "GameObject.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (15)\\Model\\Entities\\GameObject.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (15)\\Model\\Entities\\GameObject.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (15)\\Model\\Entities\\GameObject.cs",
+              "RelativeToolTip": "..\\..\\..\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (15)\\Model\\Entities\\GameObject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T17:08:31.886Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form1.resx",
-              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\Form1.resx",
-              "RelativeDocumentMoniker": "..\\View\\Form1.resx",
-              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\Form1.resx",
-              "RelativeToolTip": "..\\View\\Form1.resx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2026-04-22T17:08:31.843Z",
+              "WhenOpened": "2026-04-22T17:26:41.584Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "..\\View\\Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\Form1.Designer.cs",
-              "RelativeToolTip": "..\\View\\Form1.Designer.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "IEntity.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (15)\\Model\\Entities\\IEntity.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (15)\\Model\\Entities\\IEntity.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (15)\\Model\\Entities\\IEntity.cs",
+              "RelativeToolTip": "..\\..\\..\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (15)\\Model\\Entities\\IEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T17:08:31.71Z",
+              "WhenOpened": "2026-04-22T17:25:54.816Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\Form1.cs",
-              "RelativeDocumentMoniker": "..\\View\\Form1.cs",
-              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\Form1.cs",
-              "RelativeToolTip": "..\\View\\Form1.cs",
+              "Title": "EnemyAI.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Systems\\EnemyAI.cs",
+              "RelativeDocumentMoniker": "Model\\Systems\\EnemyAI.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Systems\\EnemyAI.cs",
+              "RelativeToolTip": "Model\\Systems\\EnemyAI.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T17:08:31.642Z",
+              "WhenOpened": "2026-04-22T17:24:59.192Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Camera.cs",
-              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\Camera.cs",
-              "RelativeDocumentMoniker": "..\\View\\Camera.cs",
-              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\Camera.cs",
-              "RelativeToolTip": "..\\View\\Camera.cs",
+              "Title": "LightRadiusCalculator.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Systems\\LightRadiusCalculator.cs",
+              "RelativeDocumentMoniker": "Model\\Systems\\LightRadiusCalculator.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Systems\\LightRadiusCalculator.cs",
+              "RelativeToolTip": "Model\\Systems\\LightRadiusCalculator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T17:08:31.576Z",
+              "WhenOpened": "2026-04-22T17:24:47.238Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Settings.cs",
-              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\Utils\\Settings.cs",
-              "RelativeDocumentMoniker": "..\\Utils\\Settings.cs",
-              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\Utils\\Settings.cs",
-              "RelativeToolTip": "..\\Utils\\Settings.cs",
+              "Title": "EnergySystem.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Systems\\EnergySystem.cs",
+              "RelativeDocumentMoniker": "Model\\Systems\\EnergySystem.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Systems\\EnergySystem.cs",
+              "RelativeToolTip": "Model\\Systems\\EnergySystem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T17:08:31.51Z",
+              "WhenOpened": "2026-04-22T17:23:56.483Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "MathHelper.cs",
-              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\Utils\\MathHelper.cs",
-              "RelativeDocumentMoniker": "..\\Utils\\MathHelper.cs",
-              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\Utils\\MathHelper.cs",
-              "RelativeToolTip": "..\\Utils\\MathHelper.cs",
+              "Title": "CollisionDetector.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Physics\\CollisionDetector.cs",
+              "RelativeDocumentMoniker": "Model\\Physics\\CollisionDetector.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Physics\\CollisionDetector.cs",
+              "RelativeToolTip": "Model\\Physics\\CollisionDetector.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T17:08:31.423Z",
+              "WhenOpened": "2026-04-22T17:22:46.75Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "WinFormsApp2.csproj.nuget.g.targets",
-              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\obj\\WinFormsApp2.csproj.nuget.g.targets",
-              "RelativeDocumentMoniker": "..\\obj\\WinFormsApp2.csproj.nuget.g.targets",
-              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\obj\\WinFormsApp2.csproj.nuget.g.targets",
-              "RelativeToolTip": "..\\obj\\WinFormsApp2.csproj.nuget.g.targets",
+              "Title": "Gravity.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Physics\\Gravity.cs",
+              "RelativeDocumentMoniker": "Model\\Physics\\Gravity.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Physics\\Gravity.cs",
+              "RelativeToolTip": "Model\\Physics\\Gravity.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2026-04-22T17:08:31.365Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T17:22:20.326Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "WinFormsApp2.csproj.nuget.g.props",
-              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\obj\\WinFormsApp2.csproj.nuget.g.props",
-              "RelativeDocumentMoniker": "..\\obj\\WinFormsApp2.csproj.nuget.g.props",
-              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\obj\\WinFormsApp2.csproj.nuget.g.props",
-              "RelativeToolTip": "..\\obj\\WinFormsApp2.csproj.nuget.g.props",
+              "Title": "GameState.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\World\\GameState.cs",
+              "RelativeDocumentMoniker": "Model\\World\\GameState.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\World\\GameState.cs",
+              "RelativeToolTip": "Model\\World\\GameState.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2026-04-22T17:08:31.252Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T17:21:55.647Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "WinFormsApp2.csproj.nuget.dgspec.json",
-              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\obj\\WinFormsApp2.csproj.nuget.dgspec.json",
-              "RelativeDocumentMoniker": "..\\obj\\WinFormsApp2.csproj.nuget.dgspec.json",
-              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\obj\\WinFormsApp2.csproj.nuget.dgspec.json",
-              "RelativeToolTip": "..\\obj\\WinFormsApp2.csproj.nuget.dgspec.json",
+              "Title": "LevelLoader.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\World\\LevelLoader.cs",
+              "RelativeDocumentMoniker": "Model\\World\\LevelLoader.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\World\\LevelLoader.cs",
+              "RelativeToolTip": "Model\\World\\LevelLoader.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-22T17:08:31.161Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T17:21:38.098Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "project.nuget.cache",
-              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\obj\\project.nuget.cache",
-              "RelativeDocumentMoniker": "..\\obj\\project.nuget.cache",
-              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\obj\\project.nuget.cache",
-              "RelativeToolTip": "..\\obj\\project.nuget.cache",
+              "Title": "Level.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\World\\Level.cs",
+              "RelativeDocumentMoniker": "Model\\World\\Level.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\World\\Level.cs",
+              "RelativeToolTip": "Model\\World\\Level.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002368|",
-              "WhenOpened": "2026-04-22T17:08:31.037Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T17:21:23.284Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "project.assets.json",
-              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\obj\\project.assets.json",
-              "RelativeDocumentMoniker": "..\\obj\\project.assets.json",
-              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\obj\\project.assets.json",
-              "RelativeToolTip": "..\\obj\\project.assets.json",
+              "Title": "EnergyOrb.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Entities\\EnergyOrb.cs",
+              "RelativeDocumentMoniker": "Model\\Entities\\EnergyOrb.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Entities\\EnergyOrb.cs",
+              "RelativeToolTip": "Model\\Entities\\EnergyOrb.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-22T17:08:30.668Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T17:19:31.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LightSwitch.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Entities\\LightSwitch.cs",
+              "RelativeDocumentMoniker": "Model\\Entities\\LightSwitch.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Entities\\LightSwitch.cs",
+              "RelativeToolTip": "Model\\Entities\\LightSwitch.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T17:18:30.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Enemy.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Entities\\Enemy.cs",
+              "RelativeDocumentMoniker": "Model\\Entities\\Enemy.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Entities\\Enemy.cs",
+              "RelativeToolTip": "Model\\Entities\\Enemy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T17:18:20.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Platform.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Entities\\Platform.cs",
+              "RelativeDocumentMoniker": "Model\\Entities\\Platform.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Entities\\Platform.cs",
+              "RelativeToolTip": "Model\\Entities\\Platform.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T17:18:10.575Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Entities\\Player.cs",
+              "RelativeDocumentMoniker": "Model\\Entities\\Player.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Entities\\Player.cs",
+              "RelativeToolTip": "Model\\Entities\\Player.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T17:07:55.079Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "WhenOpened": "2026-04-22T17:17:58.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IEntity.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Entities\\IEntity.cs",
+              "RelativeDocumentMoniker": "Model\\Entities\\IEntity.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Model\\Entities\\IEntity.cs",
+              "RelativeToolTip": "Model\\Entities\\IEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T17:16:48.805Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -298,6 +366,207 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "InputHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\Controller\\InputHandler.cs",
+              "RelativeDocumentMoniker": "..\\Controller\\InputHandler.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\Controller\\InputHandler.cs",
+              "RelativeToolTip": "..\\Controller\\InputHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T17:08:32.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "GameLoopTimer.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\Controller\\GameLoopTimer.cs",
+              "RelativeDocumentMoniker": "..\\Controller\\GameLoopTimer.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\Controller\\GameLoopTimer.cs",
+              "RelativeToolTip": "..\\Controller\\GameLoopTimer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T17:08:32.097Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "GameController.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\Controller\\GameController.cs",
+              "RelativeDocumentMoniker": "..\\Controller\\GameController.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\Controller\\GameController.cs",
+              "RelativeToolTip": "..\\Controller\\GameController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T17:08:32.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UIRenderer.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\UIRenderer.cs",
+              "RelativeDocumentMoniker": "..\\View\\UIRenderer.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\UIRenderer.cs",
+              "RelativeToolTip": "..\\View\\UIRenderer.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T17:08:31.961Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Renderer.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\Renderer.cs",
+              "RelativeDocumentMoniker": "..\\View\\Renderer.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\Renderer.cs",
+              "RelativeToolTip": "..\\View\\Renderer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T17:08:31.886Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Form1.resx",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\Form1.resx",
+              "RelativeDocumentMoniker": "..\\View\\Form1.resx",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\Form1.resx",
+              "RelativeToolTip": "..\\View\\Form1.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2026-04-22T17:08:31.843Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "..\\View\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\Form1.Designer.cs",
+              "RelativeToolTip": "..\\View\\Form1.Designer.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T17:08:31.71Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\Form1.cs",
+              "RelativeDocumentMoniker": "..\\View\\Form1.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\Form1.cs",
+              "RelativeToolTip": "..\\View\\Form1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T17:08:31.642Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Camera.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\Camera.cs",
+              "RelativeDocumentMoniker": "..\\View\\Camera.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\View\\Camera.cs",
+              "RelativeToolTip": "..\\View\\Camera.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T17:08:31.576Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Settings.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\Utils\\Settings.cs",
+              "RelativeDocumentMoniker": "..\\Utils\\Settings.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\Utils\\Settings.cs",
+              "RelativeToolTip": "..\\Utils\\Settings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T17:08:31.51Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "MathHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\Utils\\MathHelper.cs",
+              "RelativeDocumentMoniker": "..\\Utils\\MathHelper.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\Utils\\MathHelper.cs",
+              "RelativeToolTip": "..\\Utils\\MathHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T17:08:31.423Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "WinFormsApp2.csproj.nuget.g.targets",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\obj\\WinFormsApp2.csproj.nuget.g.targets",
+              "RelativeDocumentMoniker": "..\\obj\\WinFormsApp2.csproj.nuget.g.targets",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\obj\\WinFormsApp2.csproj.nuget.g.targets",
+              "RelativeToolTip": "..\\obj\\WinFormsApp2.csproj.nuget.g.targets",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2026-04-22T17:08:31.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "WinFormsApp2.csproj.nuget.g.props",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\obj\\WinFormsApp2.csproj.nuget.g.props",
+              "RelativeDocumentMoniker": "..\\obj\\WinFormsApp2.csproj.nuget.g.props",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\obj\\WinFormsApp2.csproj.nuget.g.props",
+              "RelativeToolTip": "..\\obj\\WinFormsApp2.csproj.nuget.g.props",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2026-04-22T17:08:31.252Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "WinFormsApp2.csproj.nuget.dgspec.json",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\obj\\WinFormsApp2.csproj.nuget.dgspec.json",
+              "RelativeDocumentMoniker": "..\\obj\\WinFormsApp2.csproj.nuget.dgspec.json",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\obj\\WinFormsApp2.csproj.nuget.dgspec.json",
+              "RelativeToolTip": "..\\obj\\WinFormsApp2.csproj.nuget.dgspec.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-22T17:08:31.161Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "project.nuget.cache",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\obj\\project.nuget.cache",
+              "RelativeDocumentMoniker": "..\\obj\\project.nuget.cache",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\obj\\project.nuget.cache",
+              "RelativeToolTip": "..\\obj\\project.nuget.cache",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002368|",
+              "WhenOpened": "2026-04-22T17:08:31.037Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "project.assets.json",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\obj\\project.assets.json",
+              "RelativeDocumentMoniker": "..\\obj\\project.assets.json",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\obj\\project.assets.json",
+              "RelativeToolTip": "..\\obj\\project.assets.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-22T17:08:30.668Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\Danil\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (14)\\LIGHTMENDER\\WinFormsApp1\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T17:07:55.079Z"
             }
           ]
         }

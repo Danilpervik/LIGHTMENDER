@@ -2,23 +2,20 @@
 
 namespace WinFormsApp1.Model.Entities
 {
-    internal class Enemy : GameObject
+    internal class Enemy : EnemyAndPlayer
     {
-        public double VelocityX { get; set; }
         public bool IsVisible { get; set; }
-        public double Speed { get; set; } = 2;
         public bool IsActive
         {
             get { return IsVisible; }
         }
 
-        public Enemy(double x, double y, double width, double height) : base(x, y, width, height)
+        public Enemy(double x, double y, double width, double height, double velocityX, double speed) : base(x, y, width, height, velocityX, speed)
         {
-            VelocityX = 0;
             IsVisible = false;
         }
 
-        public double CalculateDistanceToPlayer(Player player, Point point)
+        private double CalculateDistanceToPlayer(Player player, Point point)
         {
             var deltaX = player.X - point.X;
             var deltaY = player.Y - point.Y;
@@ -46,21 +43,6 @@ namespace WinFormsApp1.Model.Entities
                 new Point((int)this.X + (int)this.Width, (int)this.Y + (int)this.Height)
             };
             this.IsVisible = listOfCorners.Any(corner => CalculateDistanceToPlayer(player, corner) < player.LightRadius);
-        }
-
-        public void MoveLeft()
-        {
-            this.VelocityX = -Speed;
-        }
-
-        public void MoveRight()
-        {
-            this.VelocityX = Speed;
-        }
-
-        public void StopMove()
-        {
-            this.VelocityX = 0;
         }
 
         public void UpdatePosition()

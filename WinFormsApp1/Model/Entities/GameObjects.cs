@@ -12,12 +12,12 @@ namespace WinFormsApp2.Model.Entities
         public double Y { get; set; }
         public double Width { get; set; }
         public double Height { get; set; }
-        public GameObject(double X, double Y, double Width, double Height)
+        public GameObject(double x, double y, double width, double height)
         {
-            this.X = X;
-            this.Y = Y;
-            this.Width = Width;
-            this.Height = Height;
+            this.X = x;
+            this.Y = y;
+            this.Width = width;
+            this.Height = height;
         }
 
         public Rectangle GetBounds()

@@ -2,37 +2,20 @@
 
 namespace WinFormsApp1.Model.Entities
 {
-    internal class Player : GameObject
+    internal class Player : EnemyAndPlayer
     {   
         public double Energy { get; set; }
         public double LightRadius { get; set; }
         public int JumpsLeft { get; set; }
-        public double VelocityX { get; set; }
         public double VelocityY { get; set; }
         public bool IsGrounded { get; set; }
-        public Player(double x, double y, double width, double height) : base(x, y, width, height)
+
+        public Player(double x, double y, double width, double height, double velocityX, double speed) : base(x, y, width, height, velocityX, speed)
         {
-            this.VelocityX = 0;
-            this.VelocityY = 0;
-            this.IsGrounded = false;
-            this.Energy = 100;
-            this.LightRadius = 150;
-            this.JumpsLeft = 1;
-        }
-
-        public void MoveLeft(double speed)
-        {
-            this.VelocityX = -speed;
-        }
-
-        public void MoveRight(double speed) 
-        { 
-            this.VelocityX = speed; 
-        }
-
-        public void StopMove()
-        { 
-            this.VelocityX = 0;
+            IsGrounded = false;
+            Energy = 100;
+            LightRadius = 150;
+            JumpsLeft = 1;
         }
 
         public void Jump(double jumpStrength)

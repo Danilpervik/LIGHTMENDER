@@ -1,5 +1,3 @@
-using System;
-
 namespace WinFormsApp1.Model.Entities
 {
     internal class Vector2

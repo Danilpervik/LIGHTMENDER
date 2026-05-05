@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WinFormsApp2.Model.Entities;
+﻿using WinFormsApp2.Model.Entities;
 
 namespace WinFormsApp1.Model.Entities
 {

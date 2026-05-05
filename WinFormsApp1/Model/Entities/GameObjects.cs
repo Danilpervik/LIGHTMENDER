@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp2.Model.Entities
 {
-    internal class GameObject : IEntity
+    public abstract class GameObject
     {
         public double X { get; set; }
         public double Y { get; set; }

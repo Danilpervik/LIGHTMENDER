@@ -1,40 +1,26 @@
-﻿namespace WinFormsApp1.Model.Entities
+﻿using System.Drawing;
+
+namespace WinFormsApp1.Model.Entities
 {
-    internal class EnergyOrb
+    internal class EnergyOrb : GameObject
     {
-        public float X { get; set; }
-        public float Y { get; set; }
-        public float Width { get; set; }
-        public float Height { get; set; }
         public float EnergyAmount { get; set; }
         public bool IsCollected { get; private set; }
 
-        public EnergyOrb(float x, float y)
+        public EnergyOrb(float x, float y) : base(x, y, 15, 15)
         {
-            X = x;
-            Y = y;
-            Width = 15;
-            Height = 15;
             EnergyAmount = 10;
             IsCollected = false;
         }
 
-        public EnergyOrb(float x, float y, float energyAmount)
+        public EnergyOrb(float x, float y, float energyAmount) : base(x, y, 15, 15)
         {
-            X = x;
-            Y = y;
-            Width = 15;
-            Height = 15;
             EnergyAmount = energyAmount;
             IsCollected = false;
         }
 
-        public EnergyOrb(float x, float y, float width, float height, float energyAmount)
+        public EnergyOrb(float x, float y, float width, float height, float energyAmount) : base(x, y, width, height)
         {
-            X = x;
-            Y = y;
-            Width = width;
-            Height = height;
             EnergyAmount = energyAmount;
             IsCollected = false;
         }

@@ -1,40 +1,26 @@
-﻿namespace WinFormsApp1.Model.Entities
+﻿using System;
+
+namespace WinFormsApp1.Model.Entities
 {
-    internal class LightSwitch
+    internal class LightSwitch : GameObject
     {
-        public float X { get; set; }
-        public float Y { get; set; }
-        public float Width { get; set; }
-        public float Height { get; set; }
         public bool IsActivated { get; private set; }
         public float ActivationRadius { get; set; }
 
-        public LightSwitch(float x, float y)
+        public LightSwitch(float x, float y) : base(x, y, 30, 30)
         {
-            X = x;
-            Y = y;
-            Width = 30;
-            Height = 30;
             IsActivated = false;
             ActivationRadius = 40;
         }
 
-        public LightSwitch(float x, float y, float activationRadius)
+        public LightSwitch(float x, float y, float activationRadius) : base(x, y, 30, 30)
         {
-            X = x;
-            Y = y;
-            Width = 30;
-            Height = 30;
             IsActivated = false;
             ActivationRadius = activationRadius;
         }
 
-        public LightSwitch(float x, float y, float width, float height, float activationRadius)
+        public LightSwitch(float x, float y, float width, float height, float activationRadius) : base(x, y, width, height)
         {
-            X = x;
-            Y = y;
-            Width = width;
-            Height = height;
             IsActivated = false;
             ActivationRadius = activationRadius;
         }

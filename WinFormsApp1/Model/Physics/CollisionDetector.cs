@@ -6,7 +6,7 @@ namespace WinFormsApp1.Model.Physics
 {   
     internal class CollisionDetector
     {
-        private enum CollisionDirection
+        internal enum CollisionDirection
         {
             None,
             Top,
@@ -15,7 +15,7 @@ namespace WinFormsApp1.Model.Physics
             Right
         }
 
-        public static CollisionDirection CheckPlatformCollision(Player player, Level level)
+        internal static CollisionDirection CheckPlatformCollision(Player player, Level level)
         {   
             var playerBottom = player.Y + player.Height;
             var playerTop = player.Y;
@@ -40,13 +40,26 @@ namespace WinFormsApp1.Model.Physics
                 };
 
                 var xCollision = playerNewLeft >= platformLeft || playerNewRight <= platformRight;
-                if (conditionWithoutCollision.Any())
+                var yCollision = playerNewBottom > platformTop && playerNewTop < platformBottom;
+                if (conditionWithoutCollision.Any(x => x))
                     continue;
-
-                if (playerBottom <= platformTop && playerNewBottom >= platformTop && xCollision)
-                    return CollisionDirection.Top;
-
+                if (xCollision) 
+                { 
+                    if (playerBottom <= platformTop && playerNewBottom >= platformTop)
+                        return CollisionDirection.Top;
+                    if (playerTop >= platformBottom && playerNewTop <= platformBottom)
+                        return CollisionDirection.Bottom;
+                }
+                if (yCollision)
+                {
+                    if (playerRight <= platformLeft && playerNewRight >= platformLeft)
+                        return CollisionDirection.Left;
+                    if (playerLeft >= platformRight && playerNewLeft <= platformRight)
+                        return CollisionDirection.Right;
+                }
             }
+            
+            return CollisionDirection.None;
         }
 
 

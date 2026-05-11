@@ -1,63 +1,62 @@
 ﻿using WinFormsApp1.Model.Entities;
 
-namespace WinFormsApp1.Model.World
-{
-    internal class Level
-    {   
-        public int Width { get; set; }
-        public int Height { get; set; }
+namespace WinFormsApp1.Model.World;
 
-        public List<Platform> Platforms { get; set; }
-        public List<Enemy> Enemies { get; set; }
-        public List<EnergyOrb> EnergyOrbs { get; set; }
-        public List<LightSwitch> LightSwitches { get; set; }
+internal class Level
+{   
+    public int Width { get; set; }
+    public int Height { get; set; }
 
-        public Level()
-        {
-            Platforms = new List<Platform>();
-            Enemies = new List<Enemy>();
-            EnergyOrbs = new List<EnergyOrb>();
-            LightSwitches = new List<LightSwitch>();
-        }
+    public List<Platform> Platforms { get; set; }
+    public List<Enemy> Enemies { get; set; }
+    public List<EnergyOrb> EnergyOrbs { get; set; }
+    public List<LightSwitch> LightSwitches { get; set; }
 
-        public void AddPlatform(Platform platform)
-        {
-            Platforms.Add(platform);
-        }
+    public Level()
+    {
+        Platforms = new List<Platform>();
+        Enemies = new List<Enemy>();
+        EnergyOrbs = new List<EnergyOrb>();
+        LightSwitches = new List<LightSwitch>();
+    }
 
-        public void AddEnemy(Enemy enemy)
-        {
-            Enemies.Add(enemy);
-        }
+    public void AddPlatform(Platform platform)
+    {
+        Platforms.Add(platform);
+    }
 
-        public void AddEnergyOrb(EnergyOrb energyOrb)
-        {
-            EnergyOrbs.Add(energyOrb);
-        }
+    public void AddEnemy(Enemy enemy)
+    {
+        Enemies.Add(enemy);
+    }
 
-        public void AddLightSwitch(LightSwitch lightSwitch)
-        {
-            LightSwitches.Add(lightSwitch);
-        }
+    public void AddEnergyOrb(EnergyOrb energyOrb)
+    {
+        EnergyOrbs.Add(energyOrb);
+    }
 
-        public void RemovePlatform(Platform platform)
-        {
-            Platforms.Remove(platform);
-        }
+    public void AddLightSwitch(LightSwitch lightSwitch)
+    {
+        LightSwitches.Add(lightSwitch);
+    }
 
-        public void RemoveEnemy(Enemy enemy)
-        {
-            Enemies.Remove(enemy);
-        }
+    public void RemovePlatform(Platform platform)
+    {
+        Platforms.Remove(platform);
+    }
 
-        public void RemoveEnergyOrb(EnergyOrb energyOrb)
-        {
-            EnergyOrbs.Remove(energyOrb);
-        }
+    public void RemoveEnemy(Enemy enemy)
+    {
+        Enemies.Remove(enemy);
+    }
 
-        public void RemoveLightSwitch(LightSwitch lightSwitch)
-        {
-            LightSwitches.Remove(lightSwitch);
-        }
+    public void RemoveEnergyOrb(EnergyOrb energyOrb)
+    {
+        EnergyOrbs.Remove(energyOrb);
+    }
+
+    public void RemoveLightSwitch(LightSwitch lightSwitch)
+    {
+        LightSwitches.Remove(lightSwitch);
     }
 }

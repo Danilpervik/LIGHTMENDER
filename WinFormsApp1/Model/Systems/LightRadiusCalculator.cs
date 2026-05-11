@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinFormsApp1.Model.Systems
+namespace WinFormsApp1.Model.Systems;
+
+internal class LightRadiusCalculator
 {
-    internal class LightRadiusCalculator
-    {
-    }
 }

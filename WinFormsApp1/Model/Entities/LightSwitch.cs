@@ -1,61 +1,60 @@
 ﻿using System;
 using WinFormsApp2.Model.Entities;
 
-namespace WinFormsApp1.Model.Entities
+namespace WinFormsApp1.Model.Entities;
+
+internal class LightSwitch : GameObject
 {
-    internal class LightSwitch : GameObject
+    public bool IsActivated { get; private set; }
+    public float ActivationRadius { get; set; }
+
+    public LightSwitch(float x, float y) : base(x, y, 30, 30)
     {
-        public bool IsActivated { get; private set; }
-        public float ActivationRadius { get; set; }
+        IsActivated = false;
+        ActivationRadius = 40;
+    }
 
-        public LightSwitch(float x, float y) : base(x, y, 30, 30)
+    public LightSwitch(float x, float y, float activationRadius) : base(x, y, 30, 30)
+    {
+        IsActivated = false;
+        ActivationRadius = activationRadius;
+    }
+
+    public LightSwitch(float x, float y, float width, float height, float activationRadius) : base(x, y, width, height)
+    {
+        IsActivated = false;
+        ActivationRadius = activationRadius;
+    }
+
+    public bool Activate()
+    {
+        if (!IsActivated)
         {
-            IsActivated = false;
-            ActivationRadius = 40;
+            IsActivated = true;
+            return true;
         }
+        return false;
+    }
 
-        public LightSwitch(float x, float y, float activationRadius) : base(x, y, 30, 30)
-        {
-            IsActivated = false;
-            ActivationRadius = activationRadius;
-        }
+    public bool IsPlayerInRange(float playerX, float playerY)
+    {
+        float centerX = X + Width / 2;
+        float centerY = Y + Height / 2;
 
-        public LightSwitch(float x, float y, float width, float height, float activationRadius) : base(x, y, width, height)
-        {
-            IsActivated = false;
-            ActivationRadius = activationRadius;
-        }
+        float dx = centerX - playerX;
+        float dy = centerY - playerY;
+        float distance = (float)Math.Sqrt(dx * dx + dy * dy);
 
-        public bool Activate()
-        {
-            if (!IsActivated)
-            {
-                IsActivated = true;
-                return true;
-            }
-            return false;
-        }
+        return distance <= ActivationRadius;
+    }
 
-        public bool IsPlayerInRange(float playerX, float playerY)
-        {
-            float centerX = X + Width / 2;
-            float centerY = Y + Height / 2;
+    public bool IsPlayerInRange(Vector2 playerPosition)
+    {
+        return IsPlayerInRange(playerPosition.X, playerPosition.Y);
+    }
 
-            float dx = centerX - playerX;
-            float dy = centerY - playerY;
-            float distance = (float)Math.Sqrt(dx * dx + dy * dy);
-
-            return distance <= ActivationRadius;
-        }
-
-        public bool IsPlayerInRange(Vector2 playerPosition)
-        {
-            return IsPlayerInRange(playerPosition.X, playerPosition.Y);
-        }
-
-        public void Reset()
-        {
-            IsActivated = false;
-        }
+    public void Reset()
+    {
+        IsActivated = false;
     }
 }

@@ -4,13 +4,13 @@ namespace WinFormsApp1.Model.Entities
 {
     internal class Player : EnemyAndPlayer
     {   
-        public double Energy { get; set; }
-        public double LightRadius { get; set; }
+        public float Energy { get; set; }
+        public float LightRadius { get; set; }
         public int JumpsLeft { get; set; }
-        public double VelocityY { get; set; }
+        public float VelocityY { get; set; }
         public bool IsGrounded { get; set; }
 
-        public Player(double x, double y, double width, double height, double velocityX, double speed) : base(x, y, width, height, velocityX, speed)
+        public Player(float x, float y, float width, float height, float velocityX, float speed) : base(x, y, width, height, velocityX, speed)
         {
             IsGrounded = false;
             Energy = 100;
@@ -18,7 +18,7 @@ namespace WinFormsApp1.Model.Entities
             JumpsLeft = 1;
         }
 
-        public void Jump(double jumpStrength)
+        public void Jump(float jumpStrength)
         {
             if (this.JumpsLeft > 0)
             {
@@ -28,7 +28,7 @@ namespace WinFormsApp1.Model.Entities
             }
         }
 
-        public void ApplyGravity(double gravity)
+        public void ApplyGravity(float gravity)
         {
             this.VelocityY += gravity;
         }
@@ -39,26 +39,26 @@ namespace WinFormsApp1.Model.Entities
             this.Y += this.VelocityY;
         }
 
-        public void UpdateEnergy(double EnergyDrain)
+        public void UpdateEnergy(float EnergyDrain)
         {   
             this.Energy -= EnergyDrain;
             if (this.Energy < 0)
                 this.Energy = 0;
         }
 
-        public void UpdateLightRadius(double baseRadius, double extraRadius) 
+        public void UpdateLightRadius(float baseRadius, float extraRadius) 
         { 
             this.LightRadius = baseRadius + (extraRadius * (this.Energy / 100));
         }
 
-        public void AddEnergy(double amount)
+        public void AddEnergy(float amount)
         {
             this.Energy += amount;
             if (this.Energy > 100)
                 this.Energy = 100;
         }
 
-        public void TakeDamage(double damage)
+        public void TakeDamage(float damage)
         {
             this.Energy -= damage;
             if (this.Energy < 0)

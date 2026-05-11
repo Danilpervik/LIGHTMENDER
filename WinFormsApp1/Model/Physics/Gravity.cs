@@ -4,9 +4,9 @@ namespace WinFormsApp1.Model.Physics
 {
     internal static class Gravity
     {
-        private const double EarthG = 9.81;
+        private const float EarthG = 9.81f;
 
-        private const double GameRatio = 0.07;
+        private const float GameRatio = 0.07f;
 
         public static void UpdateGravity(Player player) 
         {
@@ -16,6 +16,6 @@ namespace WinFormsApp1.Model.Physics
                 player.VelocityY = 0;
         }
 
-        public static double GetGravityValue() => EarthG * GameRatio;
+        public static float GetGravityValue() => EarthG * GameRatio;
     }
 }

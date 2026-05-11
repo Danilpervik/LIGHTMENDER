@@ -8,11 +8,11 @@ namespace WinFormsApp2.Model.Entities
 {
     public abstract class GameObject
     {
-        public double X { get; set; }
-        public double Y { get; set; }
-        public double Width { get; set; }
-        public double Height { get; set; }
-        public GameObject(double x, double y, double width, double height)
+        public float X { get; set; }
+        public float Y { get; set; }
+        public float Width { get; set; }
+        public float Height { get; set; }
+        public GameObject(float x, float y, float width, float height)
         {
             this.X = x;
             this.Y = y;

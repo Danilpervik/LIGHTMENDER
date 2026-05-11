@@ -4,9 +4,9 @@ namespace WinFormsApp1.Model.Entities
 {
     internal abstract class EnemyAndPlayer : GameObject
     {
-        public double VelocityX { get; set; }
-        public double Speed { get; set; }
-        public EnemyAndPlayer(double x, double y, double width, double height, double velocityX, double speed) : base(x, y, width, height)
+        public float VelocityX { get; set; }
+        public float Speed { get; set; }
+        public EnemyAndPlayer(float x, float y, float width, float height, float velocityX, float speed) : base(x, y, width, height)
         {
             VelocityX = velocityX;
             Speed = speed;

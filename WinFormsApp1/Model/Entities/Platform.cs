@@ -8,7 +8,7 @@ namespace WinFormsApp1.Model.Entities
 
         public PlatformType Type { get; set; }
 
-        public Platform(double x, double y, double width, double height, PlatformType type) : base(x, y, width, height)
+        public Platform(float x, float y, float width, float height, PlatformType type) : base(x, y, width, height)
         { 
             this.Type = type;
         }

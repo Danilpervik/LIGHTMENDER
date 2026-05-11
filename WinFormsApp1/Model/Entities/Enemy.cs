@@ -10,7 +10,7 @@ namespace WinFormsApp1.Model.Entities
             get { return IsVisible; }
         }
 
-        public Enemy(double x, double y, double width, double height, double velocityX, double speed) : base(x, y, width, height, velocityX, speed)
+        public Enemy(float x, float y, float width, float height, float velocityX, float speed) : base(x, y, width, height, velocityX, speed)
         {
             IsVisible = false;
         }

@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using WinFormsApp2.Model.Entities;
 
 namespace WinFormsApp1.Model.Entities
 {

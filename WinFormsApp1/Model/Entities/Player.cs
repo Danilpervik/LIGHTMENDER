@@ -2,7 +2,7 @@
 
 namespace WinFormsApp1.Model.Entities
 {
-    internal class Player : EnemyAndPlayer
+    public class Player : EnemyAndPlayer
     {   
         public double Energy { get; set; }
         public double LightRadius { get; set; }

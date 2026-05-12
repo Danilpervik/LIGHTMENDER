@@ -2,7 +2,7 @@
 
 namespace WinFormsApp1.Model.Entities
 {
-    internal abstract class EnemyAndPlayer : GameObject
+    public abstract class EnemyAndPlayer : GameObject
     {
         public double VelocityX { get; set; }
         public double Speed { get; set; }

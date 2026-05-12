@@ -2,7 +2,7 @@
 
 namespace WinFormsApp1.Model.Entities
 {
-    internal class Enemy : EnemyAndPlayer
+    public class Enemy : EnemyAndPlayer
     {
         public bool IsVisible { get; set; }
         public bool IsActive

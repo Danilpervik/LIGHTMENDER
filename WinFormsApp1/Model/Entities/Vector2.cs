@@ -1,6 +1,6 @@
 namespace WinFormsApp1.Model.Entities
 {
-    internal class Vector2
+    public class Vector2
     {
         public float X { get; set; }
         public float Y { get; set; }

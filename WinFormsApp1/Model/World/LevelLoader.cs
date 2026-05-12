@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinFormsApp1.Model.World
+namespace WinFormsApp1.Model.World;
+
+public class LevelLoader
 {
-    internal class LevelLoader
-    {
-    }
 }

@@ -1,21 +1,20 @@
 ﻿using WinFormsApp1.Model.Entities;
 
-namespace WinFormsApp1.Model.Physics
+namespace WinFormsApp1.Model.Physics;
+
+public static class Gravity
 {
-    internal static class Gravity
+    private const float EarthG = 9.81f;
+
+    private const float GameRatio = 0.07f;
+
+    public static void UpdateGravity(Player player) 
     {
-        private const double EarthG = 9.81;
-
-        private const double GameRatio = 0.07;
-
-        public static void UpdateGravity(Player player) 
-        {
-            if (!player.IsGrounded) 
-                player.ApplyGravity(EarthG * GameRatio);
-            else 
-                player.VelocityY = 0;
-        }
-
-        public static double GetGravityValue() => EarthG * GameRatio;
+        if (!player.IsGrounded) 
+            player.ApplyGravity(EarthG * GameRatio);
+        else 
+            player.VelocityY = 0;
     }
+
+    public static float GetGravityValue() => EarthG * GameRatio;
 }

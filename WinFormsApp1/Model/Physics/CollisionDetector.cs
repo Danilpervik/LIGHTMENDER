@@ -5,7 +5,19 @@ using WinFormsApp2.Model.Entities;
 namespace WinFormsApp1.Model.Physics;
 
 public class CollisionDetector
-{   
+{
+    public struct CollisionResult
+    {
+        public CollisionDirection Direction;
+        public Platform Platform;
+
+        public CollisionResult(CollisionDirection direction, Platform platform)
+        {
+            Direction = direction;
+            Platform = platform;
+        }
+    }
+
     public enum CollisionDirection
     {
         None,
@@ -15,7 +27,7 @@ public class CollisionDetector
         Right
     }
 
-    public static CollisionDirection CheckPlatformCollision(Player player, Level level)
+    public static CollisionResult CheckPlatformCollision(Player player, Level level)
     {
         var playerBottom = player.Y + player.Height;
         var playerTop = player.Y;
@@ -46,20 +58,20 @@ public class CollisionDetector
             if (xCollision)
             {
                 if (playerBottom <= platformTop && playerNewBottom >= platformTop)
-                    return CollisionDirection.Top;
+                    return new CollisionResult(CollisionDirection.Top, platform);
                 if (playerTop >= platformBottom && playerNewTop <= platformBottom)
-                    return CollisionDirection.Bottom;
+                    return new CollisionResult(CollisionDirection.Bottom, platform);
             }
             if (yCollision)
             {
                 if (playerRight <= platformLeft && playerNewRight >= platformLeft)
-                    return CollisionDirection.Left;
+                    return new CollisionResult(CollisionDirection.Left, platform);
                 if (playerLeft >= platformRight && playerNewLeft <= platformRight)
-                    return CollisionDirection.Right;
+                    return new CollisionResult(CollisionDirection.Right, platform);
             }
         }
 
-        return CollisionDirection.None;
+        return new CollisionResult(CollisionDirection.None, null);
     }
 
     public static bool CheckEnemyCollision(Player player, Level level)

@@ -6,6 +6,28 @@ namespace WinFormsApp1.Model.World;
 public class LevelLoader
 {   
     public string LevelsFolder { get; set; } = "Levels";
+    public string PlayersFolder { get; set; } = "DataOfPlayers";
+    public float[] GetPlayersData(int playerIndex) 
+    {
+        var levelFilePath = string.Format("{0}/Player{1}.txt", PlayersFolder, playerIndex);
+        if (!File.Exists(levelFilePath))
+            throw new FileNotFoundException($"Файл игрока не найден: {levelFilePath}");
+        var lines = File.ReadAllLines(levelFilePath);
+        var linesWithoutCommentsAndWhitespace = lines.
+            Select(line => line.Trim()).
+            Where(x => x[0] != '#')
+            .Where(x => !string.IsNullOrWhiteSpace(x)).ToList();
+        var playerData = linesWithoutCommentsAndWhitespace[0].Split(',', StringSplitOptions.RemoveEmptyEntries);
+        return new float[]
+        {
+            float.Parse(playerData[0]),
+            float.Parse(playerData[1]),
+            float.Parse(playerData[2]),
+            float.Parse(playerData[3]),
+            float.Parse(playerData[4]),
+            float.Parse(playerData[5])
+        };
+    }
     public Level LoadLevel(int levelIndex)
     {   
         if (levelIndex < 0)
@@ -34,10 +56,10 @@ public class LevelLoader
                     var platformType = (PlatformType)typeValue;
                     var platform = new Platform
                     (
-                        int.Parse(tokens[1]),
-                        int.Parse(tokens[2]),
-                        int.Parse(tokens[3]),
-                        int.Parse(tokens[4]),
+                        float.Parse(tokens[1]),
+                        float.Parse(tokens[2]),
+                        float.Parse(tokens[3]),
+                        float.Parse(tokens[4]),
                         platformType
                     );
                     level.AddPlatform(platform);
@@ -45,34 +67,34 @@ public class LevelLoader
                 case "enemy":
                     var enemy = new Enemy
                     (
-                        int.Parse(tokens[1]),
-                        int.Parse(tokens[2]),
-                        int.Parse(tokens[3]),
-                        int.Parse(tokens[4]),
-                        int.Parse(tokens[5]),
-                        int.Parse(tokens[6])
+                        float.Parse(tokens[1]),
+                        float.Parse(tokens[2]),
+                        float.Parse(tokens[3]),
+                        float.Parse(tokens[4]),
+                        float.Parse(tokens[5]),
+                        float.Parse(tokens[6])
                     );
                     level.AddEnemy(enemy);
                     break;
                 case "energy_orb":
                     var energyOrb = new EnergyOrb
                     (
-                        int.Parse(tokens[1]),
-                        int.Parse(tokens[2]),
-                        int.Parse(tokens[3]),
-                        int.Parse(tokens[4]),
-                        int.Parse(tokens[5])
+                        float.Parse(tokens[1]),
+                        float.Parse(tokens[2]),
+                        float.Parse(tokens[3]),
+                        float.Parse(tokens[4]),
+                        float.Parse(tokens[5])
                     );
                     level.AddEnergyOrb(energyOrb);
                     break;
                 case "light_switch":
                     var lightSwitch = new LightSwitch
                     (
-                        int.Parse(tokens[1]),
-                        int.Parse(tokens[2]),
-                        int.Parse(tokens[3]),
-                        int.Parse(tokens[4]),
-                        int.Parse(tokens[5])
+                        float.Parse(tokens[1]),
+                        float.Parse(tokens[2]),
+                        float.Parse(tokens[3]),
+                        float.Parse(tokens[4]),
+                        float.Parse(tokens[5])
                     );
                     level.AddLightSwitch(lightSwitch);
                     break;

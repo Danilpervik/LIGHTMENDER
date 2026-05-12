@@ -2,7 +2,7 @@
 
 namespace WinFormsApp1.Model.Entities;
 
-internal class Platform : GameObject
+public class Platform : GameObject
 {
     public enum PlatformType { Normal, Slippery }
 

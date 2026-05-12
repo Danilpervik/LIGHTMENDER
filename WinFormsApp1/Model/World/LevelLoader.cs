@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp1.Model.World;
 
-internal class LevelLoader
+public class LevelLoader
 {
 }

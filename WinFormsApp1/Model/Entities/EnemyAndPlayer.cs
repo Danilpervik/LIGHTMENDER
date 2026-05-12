@@ -2,7 +2,7 @@
 
 namespace WinFormsApp1.Model.Entities;
 
-internal abstract class EnemyAndPlayer : GameObject
+public abstract class EnemyAndPlayer : GameObject
 {
     public float VelocityX { get; set; }
     public float Speed { get; set; }

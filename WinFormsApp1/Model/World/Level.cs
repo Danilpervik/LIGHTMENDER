@@ -2,7 +2,7 @@
 
 namespace WinFormsApp1.Model.World;
 
-internal class Level
+public class Level
 {   
     public int Width { get; set; }
     public int Height { get; set; }

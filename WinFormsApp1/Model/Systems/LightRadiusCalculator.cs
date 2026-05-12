@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp1.Model.Systems;
 
-internal class LightRadiusCalculator
+public class LightRadiusCalculator
 {
 }

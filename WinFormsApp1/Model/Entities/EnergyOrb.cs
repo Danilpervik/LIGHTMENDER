@@ -3,7 +3,7 @@ using WinFormsApp2.Model.Entities;
 
 namespace WinFormsApp1.Model.Entities;
 
-internal class EnergyOrb : GameObject
+public class EnergyOrb : GameObject
 {
     public float EnergyAmount { get; set; }
     public bool IsCollected { get; private set; }

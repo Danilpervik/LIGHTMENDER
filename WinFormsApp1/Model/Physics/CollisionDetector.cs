@@ -4,9 +4,9 @@ using WinFormsApp2.Model.Entities;
 
 namespace WinFormsApp1.Model.Physics;
 
-internal class CollisionDetector
+public class CollisionDetector
 {   
-    internal enum CollisionDirection
+    public enum CollisionDirection
     {
         None,
         Top,
@@ -15,7 +15,7 @@ internal class CollisionDetector
         Right
     }
 
-    internal static CollisionDirection CheckPlatformCollision(Player player, Level level)
+    public static CollisionDirection CheckPlatformCollision(Player player, Level level)
     {
         var playerBottom = player.Y + player.Height;
         var playerTop = player.Y;
@@ -62,7 +62,7 @@ internal class CollisionDetector
         return CollisionDirection.None;
     }
 
-    internal static bool CheckEnemyCollision(Player player, Level level)
+    public static bool CheckEnemyCollision(Player player, Level level)
     {   
         var playerRectangle = player.GetBounds();
         foreach (var enemy in level.Enemies) 
@@ -75,12 +75,12 @@ internal class CollisionDetector
         return false;
     }
 
-    internal static List<EnergyOrb> GetEnergyOrbCollision(Player player, Level level)
+    public static List<EnergyOrb> GetEnergyOrbCollision(Player player, Level level)
     {
         return GetIntersectingObjects(player, level.EnergyOrbs.Cast<GameObject>().ToList()).Cast<EnergyOrb>().ToList();
     }
 
-    internal static List<LightSwitch> GetLightSwitchCollision(Player player, Level level)
+    public static List<LightSwitch> GetLightSwitchCollision(Player player, Level level)
     {
         return GetIntersectingObjects(player, level.LightSwitches.Cast<GameObject>().ToList()).Cast<LightSwitch>().ToList();
     }

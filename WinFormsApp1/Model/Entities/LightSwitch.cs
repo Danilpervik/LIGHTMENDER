@@ -3,7 +3,7 @@ using WinFormsApp2.Model.Entities;
 
 namespace WinFormsApp1.Model.Entities;
 
-internal class LightSwitch : GameObject
+public class LightSwitch : GameObject
 {
     public bool IsActivated { get; private set; }
     public float ActivationRadius { get; set; }

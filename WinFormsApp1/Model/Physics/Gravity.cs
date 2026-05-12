@@ -2,7 +2,7 @@
 
 namespace WinFormsApp1.Model.Physics;
 
-internal static class Gravity
+public static class Gravity
 {
     private const float EarthG = 9.81f;
 

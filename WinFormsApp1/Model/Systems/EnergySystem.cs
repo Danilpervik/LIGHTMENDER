@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp1.Model.Systems;
 
-internal class EnergySystem
+public class EnergySystem
 {
 }

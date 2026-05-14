@@ -23,7 +23,7 @@ public class GameState
 
     public GameState()
     {
-        CurrentState = GameStateEnum.MainMenu;
+        CurrentState = GameStateEnum.Playing;
         CurrentLevelIndex = 0;
         TotalLevels = 3;
     }

@@ -3,19 +3,22 @@
 namespace WinFormsApp1.Model.Entities;
 
 public class Player : EnemyAndPlayer
-{   
+{
     public float Energy { get; set; }
     public float LightRadius { get; set; }
     public int JumpsLeft { get; set; }
     public float VelocityY { get; set; }
     public bool IsGrounded { get; set; }
 
-    public Player(float x, float y, float width, float height, float velocityX, float speed) : base(x, y, width, height, velocityX, speed)
+    public bool IsAlive => Energy > 0;
+
+    public Player(float x, float y, float width, float height, float velocityX, float speed)
+        : base(x, y, width, height, velocityX, speed)
     {
         IsGrounded = false;
         Energy = 100;
         LightRadius = 150;
-        JumpsLeft = 1;
+        JumpsLeft = 1000;
     }
 
     public void Jump(float jumpStrength)
@@ -40,14 +43,14 @@ public class Player : EnemyAndPlayer
     }
 
     public void UpdateEnergy(float EnergyDrain)
-    {   
+    {
         this.Energy -= EnergyDrain;
         if (this.Energy < 0)
             this.Energy = 0;
     }
 
-    public void UpdateLightRadius(float baseRadius, float extraRadius) 
-    { 
+    public void UpdateLightRadius(float baseRadius, float extraRadius)
+    {
         this.LightRadius = baseRadius + (extraRadius * (this.Energy / 100));
     }
 
@@ -69,6 +72,6 @@ public class Player : EnemyAndPlayer
     {
         this.IsGrounded = isGrounded;
         if (isGrounded)
-            this.JumpsLeft = 1; 
+            this.JumpsLeft = 1;
     }
 }

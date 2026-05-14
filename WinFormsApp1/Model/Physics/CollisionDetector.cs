@@ -37,37 +37,49 @@ public class CollisionDetector
         var playerNewLeft = player.X + player.VelocityX;
         var playerNewRight = playerRight + player.VelocityX;
         var playerNewBottom = playerBottom + player.VelocityY;
+
         foreach (var platform in level.Platforms)
         {
             var platformLeft = platform.X;
             var platformRight = platform.X + platform.Width;
             var platformTop = platform.Y;
             var platformBottom = platform.Y + platform.Height;
-            var conditionWithoutCollision = new List<bool>
-                {
-                    playerNewRight < platformLeft,
-                    playerNewLeft > platformRight,
-                    playerNewBottom < platformTop,
-                    playerNewTop > platformBottom
-                };
 
-            var xCollision = playerNewLeft >= platformLeft || playerNewRight <= platformRight;
-            var yCollision = playerNewBottom > platformTop && playerNewTop < platformBottom;
-            if (conditionWithoutCollision.Any(x => x))
-                continue;
-            if (xCollision)
+            // Проверка: есть ли пересечение вообще
+            if (playerNewRight <= platformLeft ||
+                playerNewLeft >= platformRight ||
+                playerNewBottom <= platformTop ||
+                playerNewTop >= platformBottom)
             {
-                if (playerBottom <= platformTop && playerNewBottom >= platformTop)
-                    return new CollisionResult(CollisionDirection.Top, platform);
-                if (playerTop >= platformBottom && playerNewTop <= platformBottom)
-                    return new CollisionResult(CollisionDirection.Bottom, platform);
+                continue;  // Нет столкновения
             }
-            if (yCollision)
+
+            // Исправлено: правильное определение горизонтального пересечения
+            bool xCollision = playerNewRight > platformLeft && playerNewLeft < platformRight;
+            bool yCollision = playerNewBottom > platformTop && playerNewTop < platformBottom;
+
+            // Проверка столкновения сверху (Top)
+            if (playerBottom <= platformTop && playerNewBottom >= platformTop && xCollision)
             {
-                if (playerRight <= platformLeft && playerNewRight >= platformLeft)
-                    return new CollisionResult(CollisionDirection.Left, platform);
-                if (playerLeft >= platformRight && playerNewLeft <= platformRight)
-                    return new CollisionResult(CollisionDirection.Right, platform);
+                return new CollisionResult(CollisionDirection.Top, platform);
+            }
+
+            // Проверка столкновения снизу (Bottom)
+            if (playerTop >= platformBottom && playerNewTop <= platformBottom && xCollision)
+            {
+                return new CollisionResult(CollisionDirection.Bottom, platform);
+            }
+
+            // Проверка столкновения слева (Left)
+            if (playerRight <= platformLeft && playerNewRight >= platformLeft && yCollision)
+            {
+                return new CollisionResult(CollisionDirection.Left, platform);
+            }
+
+            // Проверка столкновения справа (Right)
+            if (playerLeft >= platformRight && playerNewLeft <= platformRight && yCollision)
+            {
+                return new CollisionResult(CollisionDirection.Right, platform);
             }
         }
 

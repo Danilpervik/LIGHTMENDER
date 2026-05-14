@@ -1,4 +1,4 @@
-namespace WinFormsApp1.Controller
+п»їnamespace WinFormsApp1.Controller
 {
     public class GameLoopTimer
     {
@@ -28,7 +28,7 @@ namespace WinFormsApp1.Controller
         public void Start() 
         {
             if (onTick == null)
-                throw new InvalidOperationException("Не установлен метод для вызова (SetOnTick)");
+                throw new InvalidOperationException("РќРµ СѓСЃС‚Р°РЅРѕРІР»РµРЅ РјРµС‚РѕРґ РґР»СЏ РІС‹Р·РѕРІР° (SetOnTick)");
             timer.Start();
             isRunning = true;
         }

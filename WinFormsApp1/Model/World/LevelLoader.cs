@@ -42,10 +42,10 @@ public class LevelLoader
         }
         var level = new Level();
         var lines = File.ReadAllLines(levelFilePath);
-        var linesWithoutCommentsAndWhitespace = lines.
-            Select(line => line.Trim()).
-            Where(x => x[0] != '#')
-            .Where(x => !string.IsNullOrWhiteSpace(x));
+        var linesWithoutCommentsAndWhitespace = lines
+            .Select(line => line.Trim())
+            .Where(x => !string.IsNullOrWhiteSpace(x))  
+            .Where(x => x[0] != '#');                  
         foreach (var line in linesWithoutCommentsAndWhitespace)
         {   
             var tokens = line.Split(',', StringSplitOptions.RemoveEmptyEntries);

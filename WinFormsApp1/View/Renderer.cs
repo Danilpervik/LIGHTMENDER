@@ -1,5 +1,6 @@
 using System;
 using System.Drawing;
+using System.Collections.Generic;
 using WinFormsApp1.Model.Entities;
 
 namespace WinFormsApp1.View
@@ -7,7 +8,6 @@ namespace WinFormsApp1.View
     public class Renderer
     {
         private readonly Camera _camera;
-        private readonly Graphics _graphics;
 
         private readonly Brush _playerBrush = new SolidBrush(Color.Yellow);
         private readonly Brush _platformBrush = new SolidBrush(Color.Gray);
@@ -16,21 +16,25 @@ namespace WinFormsApp1.View
         private readonly Brush _switchOnBrush = new SolidBrush(Color.Green);
         private readonly Brush _orbBrush = new SolidBrush(Color.Cyan);
 
-        public Renderer(Graphics graphics, Camera camera)
+        public Renderer(Camera camera)
         {
-            _graphics = graphics;
             _camera = camera;
         }
 
-        public void DrawPlayer(Player player)
+        public void Clear(Graphics g, Color color)
         {
-            if (player == null) return;
-            if (!player.IsAlive) return;
+            if (g == null) return;
+            g.Clear(color);
+        }
+
+        public void DrawPlayer(Graphics g, Player player)
+        {
+            if (g == null || player == null) return;
 
             var bounds = player.GetBounds();
             var screenRect = _camera.Transform(new RectangleF(bounds.X, bounds.Y, bounds.Width, bounds.Height));
 
-            _graphics.FillEllipse(_playerBrush, screenRect.X, screenRect.Y, screenRect.Width, screenRect.Height);
+            g.FillEllipse(_playerBrush, screenRect.X, screenRect.Y, screenRect.Width, screenRect.Height);
 
             using (var eyeBrush = new SolidBrush(Color.White))
             using (var pupilBrush = new SolidBrush(Color.Black))
@@ -40,35 +44,71 @@ namespace WinFormsApp1.View
                 var rightEyeX = screenRect.X + screenRect.Width * 3 / 4 - eyeSize;
                 var eyeY = screenRect.Y + screenRect.Height / 4;
 
-                _graphics.FillEllipse(eyeBrush, leftEyeX, eyeY, eyeSize, eyeSize);
-                _graphics.FillEllipse(eyeBrush, rightEyeX, eyeY, eyeSize, eyeSize);
+                g.FillEllipse(eyeBrush, leftEyeX, eyeY, eyeSize, eyeSize);
+                g.FillEllipse(eyeBrush, rightEyeX, eyeY, eyeSize, eyeSize);
 
-                _graphics.FillEllipse(pupilBrush, leftEyeX + eyeSize / 4, eyeY + eyeSize / 4, eyeSize / 2, eyeSize / 2);
-                _graphics.FillEllipse(pupilBrush, rightEyeX + eyeSize / 4, eyeY + eyeSize / 4, eyeSize / 2, eyeSize / 2);
+                g.FillEllipse(pupilBrush, leftEyeX + eyeSize / 4, eyeY + eyeSize / 4, eyeSize / 2, eyeSize / 2);
+                g.FillEllipse(pupilBrush, rightEyeX + eyeSize / 4, eyeY + eyeSize / 4, eyeSize / 2, eyeSize / 2);
             }
         }
-
-        public void DrawPlatform(Platform platform)
+        public void DrawDarkness(Graphics g, Player player, int screenWidth, int screenHeight)
         {
-            if (platform == null) return;
+            if (g == null || player == null) return;
+
+            var centerX = player.X + player.Width / 2;
+            var centerY = player.Y + player.Height / 2;
+            var screenCenter = _camera.Transform(centerX, centerY);
+            var lightRadius = player.LightRadius;
+
+            // Сохраняем состояние
+            var state = g.Save();
+
+            // Устанавливаем обрезку ВНЕ круга (всё, что за пределами круга)
+            using (var path = new System.Drawing.Drawing2D.GraphicsPath())
+            {
+                // Добавляем круг
+                path.AddEllipse(
+                    screenCenter.X - lightRadius,
+                    screenCenter.Y - lightRadius,
+                    lightRadius * 2,
+                    lightRadius * 2
+                );
+
+                // Инвертируем обрезку: теперь видно всё, КРОМЕ круга
+                g.SetClip(path, System.Drawing.Drawing2D.CombineMode.Exclude);
+            }
+
+            // Заливаем ВСЁ, что вне круга, чёрным цветом
+            using (var blackBrush = new SolidBrush(Color.Black))
+            {
+                g.FillRectangle(blackBrush, 0, 0, screenWidth, screenHeight);
+            }
+
+            // Восстанавливаем обрезку
+            g.Restore(state);
+        }
+
+        public void DrawPlatform(Graphics g, Platform platform)
+        {
+            if (g == null || platform == null) return;
 
             var bounds = platform.GetBounds();
             var screenRect = _camera.Transform(new RectangleF(bounds.X, bounds.Y, bounds.Width, bounds.Height));
 
-            _graphics.FillRectangle(_platformBrush, screenRect.X, screenRect.Y, screenRect.Width, screenRect.Height);
+            g.FillRectangle(_platformBrush, screenRect.X, screenRect.Y, screenRect.Width, screenRect.Height);
 
-            if (platform.IsSlippery)
+            if (platform.Type == Platform.PlatformType.Slippery)
             {
                 using (var iceBrush = new SolidBrush(Color.LightBlue))
                 {
-                    _graphics.FillRectangle(iceBrush, screenRect.X, screenRect.Y, screenRect.Width, 3);
+                    g.FillRectangle(iceBrush, screenRect.X, screenRect.Y, screenRect.Width, 3);
                 }
             }
         }
 
-        public void DrawEnemy(Enemy enemy, Player player)
+        public void DrawEnemy(Graphics g, Enemy enemy, Player player)
         {
-            if (enemy == null) return;
+            if (g == null || enemy == null) return;
             if (!enemy.IsActive) return;
 
             var bounds = enemy.GetBounds();
@@ -76,7 +116,7 @@ namespace WinFormsApp1.View
 
             Brush enemyBrush = IsEnemyInLight(enemy, player) ? new SolidBrush(Color.Orange) : _enemyBrush;
 
-            _graphics.FillRectangle(enemyBrush, screenRect.X, screenRect.Y, screenRect.Width, screenRect.Height);
+            g.FillRectangle(enemyBrush, screenRect.X, screenRect.Y, screenRect.Width, screenRect.Height);
 
             using (var eyeBrush = new SolidBrush(Color.White))
             using (var pupilBrush = new SolidBrush(Color.Red))
@@ -86,36 +126,36 @@ namespace WinFormsApp1.View
                 var rightEyeX = screenRect.X + screenRect.Width * 3 / 4 - eyeSize;
                 var eyeY = screenRect.Y + screenRect.Height / 4;
 
-                _graphics.FillEllipse(eyeBrush, leftEyeX, eyeY, eyeSize, eyeSize);
-                _graphics.FillEllipse(eyeBrush, rightEyeX, eyeY, eyeSize, eyeSize);
+                g.FillEllipse(eyeBrush, leftEyeX, eyeY, eyeSize, eyeSize);
+                g.FillEllipse(eyeBrush, rightEyeX, eyeY, eyeSize, eyeSize);
 
-                _graphics.FillEllipse(pupilBrush, leftEyeX + eyeSize / 3, eyeY + eyeSize / 3, eyeSize / 3, eyeSize / 3);
-                _graphics.FillEllipse(pupilBrush, rightEyeX + eyeSize / 3, eyeY + eyeSize / 3, eyeSize / 3, eyeSize / 3);
+                g.FillEllipse(pupilBrush, leftEyeX + eyeSize / 3, eyeY + eyeSize / 3, eyeSize / 3, eyeSize / 3);
+                g.FillEllipse(pupilBrush, rightEyeX + eyeSize / 3, eyeY + eyeSize / 3, eyeSize / 3, eyeSize / 3);
             }
         }
 
-        public void DrawSwitch(LightSwitch lightSwitch)
+        public void DrawSwitch(Graphics g, LightSwitch lightSwitch)
         {
-            if (lightSwitch == null) return;
+            if (g == null || lightSwitch == null) return;
 
             var bounds = lightSwitch.GetBounds();
             var screenRect = _camera.Transform(new RectangleF(bounds.X, bounds.Y, bounds.Width, bounds.Height));
 
             var brush = lightSwitch.IsActivated ? _switchOnBrush : _switchOffBrush;
-            _graphics.FillRectangle(brush, screenRect.X, screenRect.Y, screenRect.Width, screenRect.Height);
+            g.FillRectangle(brush, screenRect.X, screenRect.Y, screenRect.Width, screenRect.Height);
 
             using (var buttonBrush = new SolidBrush(Color.DarkGray))
             {
                 var buttonSize = screenRect.Width / 2;
                 var buttonX = screenRect.X + screenRect.Width / 4;
                 var buttonY = screenRect.Y + screenRect.Height / 4;
-                _graphics.FillEllipse(buttonBrush, buttonX, buttonY, buttonSize, buttonSize);
+                g.FillEllipse(buttonBrush, buttonX, buttonY, buttonSize, buttonSize);
             }
         }
 
-        public void DrawOrb(EnergyOrb orb)
+        public void DrawOrb(Graphics g, EnergyOrb orb)
         {
-            if (orb == null) return;
+            if (g == null || orb == null) return;
             if (orb.IsCollected) return;
 
             var bounds = orb.GetBounds();
@@ -124,15 +164,14 @@ namespace WinFormsApp1.View
             using (var outerBrush = new SolidBrush(Color.FromArgb(100, 0, 255, 255)))
             using (var innerBrush = new SolidBrush(Color.Cyan))
             {
-                _graphics.FillEllipse(outerBrush, screenRect.X - 2, screenRect.Y - 2, screenRect.Width + 4, screenRect.Height + 4);
-                _graphics.FillEllipse(innerBrush, screenRect.X, screenRect.Y, screenRect.Width, screenRect.Height);
+                g.FillEllipse(outerBrush, screenRect.X - 2, screenRect.Y - 2, screenRect.Width + 4, screenRect.Height + 4);
+                g.FillEllipse(innerBrush, screenRect.X, screenRect.Y, screenRect.Width, screenRect.Height);
             }
         }
 
-        public void DrawLightRadius(Player player)
+        public void DrawLightRadius(Graphics g, Player player)
         {
-            if (player == null) return;
-            if (!player.IsAlive) return;
+            if (g == null || player == null) return;
 
             var centerX = player.X + player.Width / 2;
             var centerY = player.Y + player.Height / 2;
@@ -149,7 +188,7 @@ namespace WinFormsApp1.View
                 {
                     brush.CenterColor = Color.FromArgb(120, 255, 255, 150);
                     brush.SurroundColors = new Color[] { Color.FromArgb(0, 0, 0, 0) };
-                    _graphics.FillPath(brush, path);
+                    g.FillPath(brush, path);
                 }
             }
         }
@@ -169,6 +208,35 @@ namespace WinFormsApp1.View
             var distance = (float)Math.Sqrt(dx * dx + dy * dy);
 
             return distance <= player.LightRadius;
+        }
+
+        // Методы для отрисовки списков
+        public void DrawPlatforms(Graphics g, List<Platform> platforms)
+        {
+            if (g == null || platforms == null) return;
+            foreach (var platform in platforms)
+                DrawPlatform(g, platform);
+        }
+
+        public void DrawEnemies(Graphics g, List<Enemy> enemies, Player player)
+        {
+            if (g == null || enemies == null) return;
+            foreach (var enemy in enemies)
+                DrawEnemy(g, enemy, player);
+        }
+
+        public void DrawLightSwitches(Graphics g, List<LightSwitch> switches)
+        {
+            if (g == null || switches == null) return;
+            foreach (var switchItem in switches)
+                DrawSwitch(g, switchItem);
+        }
+
+        public void DrawEnergyOrbs(Graphics g, List<EnergyOrb> orbs)
+        {
+            if (g == null || orbs == null) return;
+            foreach (var orb in orbs)
+                DrawOrb(g, orb);
         }
     }
 }

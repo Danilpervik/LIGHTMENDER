@@ -1,60 +1,63 @@
-namespace WinFormsApp1.Controller;
+using System.Windows.Forms;
 
-public class InputHandler
+namespace WinFormsApp1.Controller
 {
-    private bool isLeftPressed = false;
-    private bool isRightPressed = false;
-    private bool isJumpPressed = false;
-
-    public void KeyDown(Keys key)
+    public class InputHandler
     {
-        KeyDownOrUp(key, true);
-    }
+        private bool isLeftPressed = false;
+        private bool isRightPressed = false;
+        private bool isJumpPressed = false;
 
-    public void KeyUp(Keys key)
-    {
-        KeyDownOrUp(key, false);
-    }
-
-    private void KeyDownOrUp(Keys key, bool isPressed)
-    {
-        switch (key)
-        {   
-            case Keys.A:
-            case Keys.Left:
-                isLeftPressed = isPressed;
-                break;
-            case Keys.D:
-            case Keys.Right:
-                isRightPressed = isPressed;
-                break;
-            case Keys.W:
-            case Keys.Up:
-            case Keys.Space:
-                isJumpPressed = isPressed;
-                break;
+        public void KeyDown(Keys key)
+        {
+            KeyDownOrUp(key, true);
         }
-    }
 
-    public bool IsLeftPressed()
-    { 
-        return isLeftPressed;
-    }
+        public void KeyUp(Keys key)
+        {
+            KeyDownOrUp(key, false);
+        }
 
-    public bool IsRightPressed()
-    {
-        return isRightPressed;
-    }
+        private void KeyDownOrUp(Keys key, bool isPressed)
+        {
+            switch (key)
+            {   
+                case Keys.A:
+                case Keys.Left:
+                    isLeftPressed = isPressed;
+                    break;
+                case Keys.D:
+                case Keys.Right:
+                    isRightPressed = isPressed;
+                    break;
+                case Keys.W:
+                case Keys.Up:
+                case Keys.Space:
+                    isJumpPressed = isPressed;
+                    break;
+            }
+        }
 
-    public bool IsJumpPressed()
-    {
-        return isJumpPressed;
-    }
+        public bool IsLeftPressed()
+        { 
+            return isLeftPressed;
+        }
 
-    public void Reset()
-    {
-        isLeftPressed = false;
-        isRightPressed = false;
-        isJumpPressed = false;
+        public bool IsRightPressed()
+        {
+            return isRightPressed;
+        }
+
+        public bool IsJumpPressed()
+        {
+            return isJumpPressed;
+        }
+
+        public void Reset()
+        {
+            isLeftPressed = false;
+            isRightPressed = false;
+            isJumpPressed = false;
+        }
     }
 }

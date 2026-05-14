@@ -54,36 +54,25 @@ public class GameController
     public void HandleInput()
     {
         if (inputHandler.IsLeftPressed())
-        {
             player.MoveLeft();
-        }
         else if (inputHandler.IsRightPressed())
-        {
             player.MoveRight();
-        }
         else
-        {
             player.StopMove();
-        }
 
         if (inputHandler.IsJumpPressed() && player.IsGrounded)
-        {
             player.Jump(jumpPower);
-        }
     }
 
     public void UpdatePlayerPhysics()
     {
-        // Если игрок на земле, проверяем, всё ли ещё он на платформе
         if (player.IsGrounded)
         {
-            // Проверяем, есть ли платформа под игроком
             bool hasPlatformUnder = false;
             var playerBottom = player.Y + player.Height;
 
             foreach (var platform in currentLevel.Platforms)
             {
-                // Проверяем, находится ли игрок над платформой
                 if (playerBottom <= platform.Y + 5 &&
                     playerBottom >= platform.Y - 5 &&
                     player.X + player.Width > platform.X &&
@@ -95,20 +84,15 @@ public class GameController
             }
 
             if (!hasPlatformUnder)
-            {
-                // Игрок больше не на платформе
                 player.IsGrounded = false;
-            }
             else
             {
-                // Игрок всё ещё на платформе, обновляем только X
                 player.VelocityY = 0;
                 player.UpdatePosition();
                 return;
             }
         }
 
-        // Применяем гравитацию и обновляем позицию
         player.ApplyGravity(gravity);
         player.UpdatePosition();
     }
@@ -203,7 +187,6 @@ public class GameController
             return;
 
         currentLevel = levelLoader.LoadLevel(gameState.CurrentLevelIndex);
-        // Всегда загружаем Player0.txt (индекс 0)
         var playerData = levelLoader.GetPlayersData(0);
         player = new Player(playerData[0], playerData[1], playerData[2], playerData[3], playerData[4], playerData[5]);
     }
@@ -211,7 +194,6 @@ public class GameController
     public void RestartLevel()
     {
         currentLevel = levelLoader.LoadLevel(gameState.CurrentLevelIndex);
-        // Всегда загружаем Player0.txt
         var playerData = levelLoader.GetPlayersData(0);
         player = new Player(playerData[0], playerData[1], playerData[2], playerData[3], playerData[4], playerData[5]);
         gameState.ResumeGame();

@@ -82,11 +82,10 @@ namespace WinFormsApp1.View
                 _camera.Follow(playerCenterX, playerCenterY);
             }
 
-            // 1. Чёрный фон
             _renderer.Clear(g, Color.Black);
 
-            int screenWidth = this.ClientSize.Width;
-            int screenHeight = this.ClientSize.Height;
+            var screenWidth = this.ClientSize.Width;
+            var screenHeight = this.ClientSize.Height;
 
             if (gameController.GameState.IsGameOver())
             {
@@ -100,17 +99,14 @@ namespace WinFormsApp1.View
                 return;
             }
 
-            // 2. Рисуем ВСЕ объекты
             _renderer.DrawPlatforms(g, gameController.CurrentLevel.Platforms);
             _renderer.DrawEnemies(g, gameController.CurrentLevel.Enemies, gameController.Player);
             _renderer.DrawLightSwitches(g, gameController.CurrentLevel.LightSwitches);
             _renderer.DrawEnergyOrbs(g, gameController.CurrentLevel.EnergyOrbs);
             _renderer.DrawPlayer(g, gameController.Player);
 
-            // 3. НАКЛАДЫВАЕМ ТЕМНОТУ (внутри круга света будет видно)
             _renderer.DrawDarkness(g, gameController.Player, screenWidth, screenHeight);
 
-            // 4. UI поверх всего
             _uiRenderer.DrawEnergyBar(g, gameController.Player, 20, 20, 200, 25);
             _uiRenderer.DrawScore(g, gameController.GameState.CurrentLevelIndex + 1, 20, 55);
             _uiRenderer.DrawControls(g, screenWidth);

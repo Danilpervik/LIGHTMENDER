@@ -1,5 +1,3 @@
-using System.Drawing;
-
 namespace WinFormsApp1.View
 {
     public class Camera

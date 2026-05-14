@@ -1,6 +1,3 @@
-using System;
-using System.Drawing;
-using System.Collections.Generic;
 using WinFormsApp1.Model.Entities;
 
 namespace WinFormsApp1.View
@@ -60,13 +57,10 @@ namespace WinFormsApp1.View
             var screenCenter = _camera.Transform(centerX, centerY);
             var lightRadius = player.LightRadius;
 
-            // Сохраняем состояние
             var state = g.Save();
 
-            // Устанавливаем обрезку ВНЕ круга (всё, что за пределами круга)
             using (var path = new System.Drawing.Drawing2D.GraphicsPath())
             {
-                // Добавляем круг
                 path.AddEllipse(
                     screenCenter.X - lightRadius,
                     screenCenter.Y - lightRadius,
@@ -74,17 +68,14 @@ namespace WinFormsApp1.View
                     lightRadius * 2
                 );
 
-                // Инвертируем обрезку: теперь видно всё, КРОМЕ круга
                 g.SetClip(path, System.Drawing.Drawing2D.CombineMode.Exclude);
             }
 
-            // Заливаем ВСЁ, что вне круга, чёрным цветом
             using (var blackBrush = new SolidBrush(Color.Black))
             {
                 g.FillRectangle(blackBrush, 0, 0, screenWidth, screenHeight);
             }
 
-            // Восстанавливаем обрезку
             g.Restore(state);
         }
 
@@ -114,7 +105,7 @@ namespace WinFormsApp1.View
             var bounds = enemy.GetBounds();
             var screenRect = _camera.Transform(new RectangleF(bounds.X, bounds.Y, bounds.Width, bounds.Height));
 
-            Brush enemyBrush = IsEnemyInLight(enemy, player) ? new SolidBrush(Color.Orange) : _enemyBrush;
+            var enemyBrush = IsEnemyInLight(enemy, player) ? new SolidBrush(Color.Orange) : _enemyBrush;
 
             g.FillRectangle(enemyBrush, screenRect.X, screenRect.Y, screenRect.Width, screenRect.Height);
 
@@ -210,7 +201,6 @@ namespace WinFormsApp1.View
             return distance <= player.LightRadius;
         }
 
-        // Методы для отрисовки списков
         public void DrawPlatforms(Graphics g, List<Platform> platforms)
         {
             if (g == null || platforms == null) return;

@@ -45,42 +45,26 @@ public class CollisionDetector
             var platformTop = platform.Y;
             var platformBottom = platform.Y + platform.Height;
 
-            // Проверка: есть ли пересечение вообще
             if (playerNewRight <= platformLeft ||
                 playerNewLeft >= platformRight ||
                 playerNewBottom <= platformTop ||
                 playerNewTop >= platformBottom)
-            {
-                continue;  // Нет столкновения
-            }
+                continue; 
 
-            // Исправлено: правильное определение горизонтального пересечения
             bool xCollision = playerNewRight > platformLeft && playerNewLeft < platformRight;
             bool yCollision = playerNewBottom > platformTop && playerNewTop < platformBottom;
 
-            // Проверка столкновения сверху (Top)
             if (playerBottom <= platformTop && playerNewBottom >= platformTop && xCollision)
-            {
                 return new CollisionResult(CollisionDirection.Top, platform);
-            }
 
-            // Проверка столкновения снизу (Bottom)
             if (playerTop >= platformBottom && playerNewTop <= platformBottom && xCollision)
-            {
                 return new CollisionResult(CollisionDirection.Bottom, platform);
-            }
 
-            // Проверка столкновения слева (Left)
             if (playerRight <= platformLeft && playerNewRight >= platformLeft && yCollision)
-            {
                 return new CollisionResult(CollisionDirection.Left, platform);
-            }
 
-            // Проверка столкновения справа (Right)
             if (playerLeft >= platformRight && playerNewLeft <= platformRight && yCollision)
-            {
                 return new CollisionResult(CollisionDirection.Right, platform);
-            }
         }
 
         return new CollisionResult(CollisionDirection.None, null);

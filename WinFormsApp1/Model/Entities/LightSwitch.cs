@@ -1,5 +1,4 @@
-﻿using System;
-using WinFormsApp2.Model.Entities;
+﻿using WinFormsApp2.Model.Entities;
 
 namespace WinFormsApp1.Model.Entities;
 

@@ -1,206 +1,166 @@
-﻿using WinFormsApp1.Model.Entities;
-using WinFormsApp1.Model.Physics;
+﻿using WinFormsApp1.Controller;
+using WinFormsApp1.Model.Entities;
 using WinFormsApp1.Model.World;
-using static WinFormsApp1.Model.Physics.CollisionDetector;
+using WinFormsApp1.Services;
 
-namespace WinFormsApp1.Controller;
-
-public class GameController
+namespace WinFormsApp1.Controller
 {
-    public Player Player => player;
-    public Level CurrentLevel => currentLevel;
-    public GameState GameState => gameState;
-    private LevelLoader levelLoader;
-    private Level currentLevel;
-    private GameState gameState;
-    private Player player;
-    private InputHandler inputHandler;
-    private float gravity;
-    private float jumpPower = 15f;
-
-    public GameController(InputHandler inputHandler)
+    public class GameController
     {
-        this.inputHandler = inputHandler;
-        levelLoader = new LevelLoader();
-        var playerData = levelLoader.GetPlayersData(0);
-        player = new Player(playerData[0], playerData[1], playerData[2], playerData[3], playerData[4], playerData[5]);
-        gameState = new GameState();
-        currentLevel = levelLoader.LoadLevel(0);
-        gravity = 0.8f;
-    }
+        public Player Player => player;
+        public Level CurrentLevel => currentLevel;
+        public GameState GameState => gameState;
 
-    public void Update()
-    {
-        if (!gameState.IsPlaying())
-            return;
+        private LevelLoader levelLoader;
+        private Level currentLevel;
+        private GameState gameState;
+        private Player player;
+        private InputHandler inputHandler;
+        private float gravity;
+        private float jumpPower = 15f;
 
-        if (player.Energy <= 0)
+        public GameController(InputHandler inputHandler)
         {
-            gameState.GameOver();
-            return;
+            this.inputHandler = inputHandler;
+            levelLoader = new LevelLoader();
+            var playerData = levelLoader.GetPlayersData(0);
+            player = new Player(playerData[0], playerData[1], playerData[2], playerData[3], playerData[4], playerData[5]);
+            gameState = new GameState();
+            currentLevel = levelLoader.LoadLevel(0);
+            gravity = 0.8f;
         }
 
-        HandleInput();
-        UpdatePlayerPhysics();
-        CheckPlatformCollisionAndAdjust();
-        UpdateEnergyAndLight();
-        UpdateEnemies();
-        CheckEnemyCollision();
-        CollectEnergyOrbs();
-        ActivateSwitches();
-        CheckVictory();
-    }
-
-    public void HandleInput()
-    {
-        if (inputHandler.IsLeftPressed())
-            player.MoveLeft();
-        else if (inputHandler.IsRightPressed())
-            player.MoveRight();
-        else
-            player.StopMove();
-
-        if (inputHandler.IsJumpPressed() && player.IsGrounded)
-            player.Jump(jumpPower);
-    }
-
-    public void UpdatePlayerPhysics()
-    {
-        if (player.IsGrounded)
+        public void Update()
         {
-            bool hasPlatformUnder = false;
-            var playerBottom = player.Y + player.Height;
-
-            foreach (var platform in currentLevel.Platforms)
-            {
-                if (playerBottom <= platform.Y + 5 &&
-                    playerBottom >= platform.Y - 5 &&
-                    player.X + player.Width > platform.X &&
-                    player.X < platform.X + platform.Width)
-                {
-                    hasPlatformUnder = true;
-                    break;
-                }
-            }
-
-            if (!hasPlatformUnder)
-                player.IsGrounded = false;
-            else
-            {
-                player.VelocityY = 0;
-                player.UpdatePosition();
+            if (!gameState.IsPlaying())
                 return;
+
+            HandleInput();
+            UpdatePlayerPhysics();
+            CheckPlatformCollisionAndAdjust();
+            UpdateEnergyAndLight();
+            UpdateEnemies();
+            CheckEnemyCollision();
+            CollectEnergyOrbs();
+            ActivateSwitches();
+            CheckVictory();
+        }
+
+        public void HandleInput()
+        {
+            if (inputHandler.IsLeftPressed())
+                player.MoveLeft();
+            else if (inputHandler.IsRightPressed())
+                player.MoveRight();
+            else
+                player.StopMove();
+
+            if (inputHandler.IsJumpPressed() && player.IsGrounded)
+                player.Jump(jumpPower);
+        }
+
+        public void UpdatePlayerPhysics()
+        {
+            player.ApplyGravity(gravity);
+            player.UpdatePosition();
+        }
+
+        public void UpdateEnemies()
+        {
+            foreach (var enemy in currentLevel.Enemies)
+            {
+                enemy.SetVisible(player);
+                enemy.SeekPlayer(player);
+                enemy.UpdatePosition();
             }
         }
 
-        player.ApplyGravity(gravity);
-        player.UpdatePosition();
-    }
-
-    public void UpdateEnemies()
-    {
-        foreach (var enemy in currentLevel.Enemies)
+        public void CheckPlatformCollisionAndAdjust()
         {
-            enemy.SetVisible(player);
-            enemy.SeekPlayer(player);
-            enemy.UpdatePosition();
+            var collisionInfo = CollisionService.CheckPlatformCollision(player, currentLevel);
+
+            if (collisionInfo.Direction == ControllerDirection.Direction.None)
+                return;
+
+            switch (collisionInfo.Direction)
+            {
+                case ControllerDirection.Direction.Top:
+                    player.Y += collisionInfo.AdjustY;
+                    player.IsGrounded = true;
+                    player.VelocityY = 0;
+                    break;
+                case ControllerDirection.Direction.Bottom:
+                    player.Y += collisionInfo.AdjustY;
+                    player.VelocityY = 0;
+                    break;
+                case ControllerDirection.Direction.Left:
+                    player.X += collisionInfo.AdjustX;
+                    player.VelocityX = 0;
+                    break;
+                case ControllerDirection.Direction.Right:
+                    player.X += collisionInfo.AdjustX;
+                    player.VelocityX = 0;
+                    break;
+            }
         }
-    }
 
-    public void CheckPlatformCollisionAndAdjust()
-    {
-        var collisionResult = CollisionDetector.CheckPlatformCollision(player, currentLevel);
-
-        if (collisionResult.Direction == CollisionDirection.None)
-            return;
-
-        switch (collisionResult.Direction)
+        public void UpdateEnergyAndLight()
         {
-            case CollisionDirection.Top:
-                player.Y = collisionResult.Platform.Y - player.Height;
-                player.IsGrounded = true;
-                player.VelocityY = 0;
-                break;
-            case CollisionDirection.Bottom:
-                player.Y = collisionResult.Platform.Y + collisionResult.Platform.Height;
-                player.VelocityY = 0;
-                break;
-            case CollisionDirection.Left:
-                player.X = collisionResult.Platform.X - player.Width;
-                player.VelocityX = 0;
-                break;
-            case CollisionDirection.Right:
-                player.X = collisionResult.Platform.X + collisionResult.Platform.Width;
-                player.VelocityX = 0;
-                break;
+            player.UpdateEnergy(0.2f);
+            player.UpdateLightRadius(50, 100);
         }
-    }
 
-    public void UpdateEnergyAndLight()
-    {
-        player.UpdateEnergy(0.2f);
-        player.UpdateLightRadius(100, 200); 
-    }
+        public void CheckEnemyCollision()
+        {
+            if (CollisionService.CheckEnemyCollision(player, currentLevel))
+                gameState.GameOver();
+        }
 
-    public void CheckEnemyCollision()
-    {
-        if (CollisionDetector.CheckEnemyCollision(player, currentLevel))
+        public void CollectEnergyOrbs()
+        {
+            var collectedOrbs = CollisionService.GetEnergyOrbCollision(player, currentLevel);
+            foreach (var orb in collectedOrbs)
+            {
+                player.AddEnergy(orb.EnergyAmount);
+                currentLevel.EnergyOrbs.Remove(orb);
+            }
+        }
+
+        public void ActivateSwitches()
+        {
+            foreach (var switchObj in CollisionService.GetLightSwitchCollision(player, currentLevel))
+                switchObj.Activate();
+        }
+
+        public void CheckVictory()
+        {
+            var allSwitchesActivated = currentLevel.LightSwitches.All(s => s.IsActivated);
+            if (allSwitchesActivated)
+                NextLevel();
+        }
+
+        public void NextLevel()
+        {
+            gameState.LevelCompleted();
+            if (gameState.IsVictory())
+                return;
+
+            currentLevel = levelLoader.LoadLevel(gameState.CurrentLevelIndex);
+            var playerData = levelLoader.GetPlayersData(gameState.CurrentLevelIndex);
+            player = new Player(playerData[0], playerData[1], playerData[2], playerData[3], playerData[4], playerData[5]);
+        }
+
+        public void RestartLevel()
+        {
+            currentLevel = levelLoader.LoadLevel(gameState.CurrentLevelIndex);
+            var playerData = levelLoader.GetPlayersData(gameState.CurrentLevelIndex);
+            player = new Player(playerData[0], playerData[1], playerData[2], playerData[3], playerData[4], playerData[5]);
+            gameState.ResumeGame();
+        }
+
+        public void GameOver()
         {
             gameState.GameOver();
         }
-    }
-
-    public void CollectEnergyOrbs()
-    {
-        var collectedOrbs = CollisionDetector.GetEnergyOrbCollision(player, currentLevel);
-        foreach (var orb in collectedOrbs)
-        {
-            player.AddEnergy(orb.EnergyAmount);
-            currentLevel.EnergyOrbs.Remove(orb);
-        }
-    }
-
-    public void ActivateSwitches()
-    {
-        foreach (var switchObj in CollisionDetector.GetLightSwitchCollision(player, currentLevel))
-        {
-            switchObj.Activate();
-        }
-    }
-
-    public void CheckVictory()
-    {
-        if (currentLevel.LightSwitches.Count == 0)
-            return;
-
-        bool allSwitchesActivated = currentLevel.LightSwitches.All(s => s.IsActivated);
-        if (allSwitchesActivated)
-        {
-            NextLevel();
-        }
-    }
-
-    public void NextLevel()
-    {
-        gameState.LevelCompleted();
-        if (gameState.IsVictory())
-            return;
-
-        currentLevel = levelLoader.LoadLevel(gameState.CurrentLevelIndex);
-        var playerData = levelLoader.GetPlayersData(0);
-        player = new Player(playerData[0], playerData[1], playerData[2], playerData[3], playerData[4], playerData[5]);
-    }
-
-    public void RestartLevel()
-    {
-        currentLevel = levelLoader.LoadLevel(gameState.CurrentLevelIndex);
-        var playerData = levelLoader.GetPlayersData(0);
-        player = new Player(playerData[0], playerData[1], playerData[2], playerData[3], playerData[4], playerData[5]);
-        gameState.ResumeGame();
-    }
-
-    public void GameOver()
-    {
-        gameState.GameOver();
     }
 }

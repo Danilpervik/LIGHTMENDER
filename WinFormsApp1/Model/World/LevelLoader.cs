@@ -9,7 +9,7 @@ public class LevelLoader
     public string PlayersFolder { get; set; } = "DataOfPlayers";
     public float[] GetPlayersData(int playerIndex) 
     {
-        var levelFilePath = string.Format("{0}/Player{1}.txt", PlayersFolder, playerIndex);
+        var levelFilePath = string.Format("{0}/Player0.txt", PlayersFolder, playerIndex);
         if (!File.Exists(levelFilePath))
             throw new FileNotFoundException($"Файл игрока не найден: {levelFilePath}");
         var lines = File.ReadAllLines(levelFilePath);

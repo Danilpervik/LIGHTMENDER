@@ -5,7 +5,6 @@ namespace WinFormsApp1.View
 {
     public class UIRenderer
     {
-        private readonly Graphics graphics;
         private readonly Font font = new Font("Arial", 16);
         private readonly Font smallFont = new Font("Arial", 12);
         private readonly Brush textBrush = new SolidBrush(Color.White);
@@ -13,12 +12,11 @@ namespace WinFormsApp1.View
         private readonly Brush energyFillBrush = new SolidBrush(Color.Green);
         private readonly Brush energyLowBrush = new SolidBrush(Color.Red);
 
-        public UIRenderer(Graphics graphics)
+        public UIRenderer()
         {
-            this.graphics = graphics;
         }
 
-        public void DrawEnergyBar(Player player, int x, int y, int width, int height)
+        public void DrawEnergyBar(Graphics graphics, Player player, int x, int y, int width, int height)
         {
             if (player == null) return;
 
@@ -40,7 +38,7 @@ namespace WinFormsApp1.View
             graphics.DrawString(energyText, smallFont, textBrush, textX, textY);
         }
 
-        public void DrawGameMessage(string message, float x, float y)
+        public void DrawGameMessage(Graphics graphics, string message, float x, float y)
         {
             if (string.IsNullOrEmpty(message)) return;
 
@@ -59,13 +57,13 @@ namespace WinFormsApp1.View
             });
         }
 
-        public void DrawScore(int score, int x, int y)
+        public void DrawScore(Graphics graphics, int score, int x, int y)
         {
             var scoreText = $"Счёт: {score}";
             graphics.DrawString(scoreText, font, textBrush, x, y);
         }
 
-        public void DrawGameOver(float screenWidth, float screenHeight)
+        public void DrawGameOver(Graphics graphics, float screenWidth, float screenHeight)
         {
             var centerX = screenWidth / 2;
             var centerY = screenHeight / 2;
@@ -75,11 +73,11 @@ namespace WinFormsApp1.View
                 graphics.FillRectangle(bgBrush, 0, 0, screenWidth, screenHeight);
             }
 
-            DrawGameMessage("ИГРА ОКОНЧЕНА", centerX, centerY - 40);
-            DrawGameMessage("Нажмите R для перезапуска", centerX, centerY + 20);
+            DrawGameMessage(graphics, "ИГРА ОКОНЧЕНА", centerX, centerY - 40);
+            DrawGameMessage(graphics, "Нажмите R для перезапуска", centerX, centerY + 20);
         }
 
-        public void DrawVictory(float screenWidth, float screenHeight)
+        public void DrawVictory(Graphics graphics, float screenWidth, float screenHeight)
         {
             var centerX = screenWidth / 2;
             var centerY = screenHeight / 2;
@@ -89,11 +87,11 @@ namespace WinFormsApp1.View
                 graphics.FillRectangle(bgBrush, 0, 0, screenWidth, screenHeight);
             }
 
-            DrawGameMessage("ПОБЕДА!", centerX, centerY - 40);
-            DrawGameMessage("Нажмите R для следующего уровня", centerX, centerY + 20);
+            DrawGameMessage(graphics, "ПОБЕДА!", centerX, centerY - 40);
+            DrawGameMessage(graphics, "Нажмите R для следующего уровня", centerX, centerY + 20);
         }
 
-        public void DrawControls(float screenWidth)
+        public void DrawControls(Graphics graphics, float screenWidth)
         {
             var controlsText = "A/D или ←/→ - движение | Space - прыжок";
             var textSize = graphics.MeasureString(controlsText, smallFont);

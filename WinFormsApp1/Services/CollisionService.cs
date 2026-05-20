@@ -1,6 +1,9 @@
+using System.Collections.Generic;
+using System.Linq;
 using WinFormsApp1.Controller;
 using WinFormsApp1.Model.Entities;
 using WinFormsApp1.Model.World;
+using WinFormsApp2.Model.Entities;
 
 namespace WinFormsApp1.Services
 {
@@ -8,14 +11,17 @@ namespace WinFormsApp1.Services
     {
         public static ControllerDirection.CollisionInfo CheckPlatformCollision(Player player, Level level)
         {
-            var playerBottom = player.Y + player.Height;
-            var playerTop = player.Y;
-            var playerLeft = player.X;
-            var playerRight = player.X + player.Width;
-            var playerNewTop = player.Y + player.VelocityY;
-            var playerNewLeft = player.X + player.VelocityX;
-            var playerNewRight = playerRight + player.VelocityX;
-            var playerNewBottom = playerBottom + player.VelocityY;
+            // Текущая (уже обновлённая) позиция игрока
+            var currTop = player.Y;
+            var currLeft = player.X;
+            var currRight = player.X + player.Width;
+            var currBottom = player.Y + player.Height;
+
+            // Предыдущая позиция игрока (до последнего перемещения)
+            var prevTop = player.Y - player.VelocityY;
+            var prevLeft = player.X - player.VelocityX;
+            var prevRight = prevLeft + player.Width;
+            var prevBottom = prevTop + player.Height;
 
             foreach (var platform in level.Platforms)
             {
@@ -24,44 +30,54 @@ namespace WinFormsApp1.Services
                 var platformTop = platform.Y;
                 var platformBottom = platform.Y + platform.Height;
 
+                // Если игрок до и после перемещения полностью слева/справа/сверху/снизу от платформы — пропускаем
                 var conditionWithoutCollision = new List<bool>
                 {
-                    playerNewRight < platformLeft,
-                    playerNewLeft > platformRight,
-                    playerNewBottom < platformTop,
-                    playerNewTop > platformBottom
+                    prevRight < platformLeft && currRight < platformLeft,
+                    prevLeft > platformRight && currLeft > platformRight,
+                    prevBottom < platformTop && currBottom < platformTop,
+                    prevTop > platformBottom && currTop > platformBottom
                 };
-
-                var xCollision = playerNewLeft >= platformLeft || playerNewRight <= platformRight;
-                var yCollision = playerNewBottom > platformTop && playerNewTop < platformBottom;
 
                 if (conditionWithoutCollision.Any(x => x))
                     continue;
 
-                if (xCollision)
+                // Проверяем перекрытие по X и Y по комбинации предыдущей/текущей позиции
+                var xOverlap = (currRight > platformLeft && currLeft < platformRight) ||
+                               (prevRight > platformLeft && prevLeft < platformRight);
+                var yOverlap = (currBottom > platformTop && currTop < platformBottom) ||
+                               (prevBottom > platformTop && prevTop < platformBottom);
+
+                if (xOverlap)
                 {
-                    if (playerBottom <= platformTop && playerNewBottom >= platformTop)
+                    // Удар снизу -> приземление на платформу
+                    if (prevBottom <= platformTop && currBottom >= platformTop)
                     {
-                        float adjustY = platformTop - playerBottom;
+                        float adjustY = platformTop - currBottom;
                         return new ControllerDirection.CollisionInfo(ControllerDirection.Direction.Top, 0, adjustY);
                     }
-                    if (playerTop >= platformBottom && playerNewTop <= platformBottom)
+
+                    // Удар сверху -> столкновение с нижней стороной платформы
+                    if (prevTop >= platformBottom && currTop <= platformBottom)
                     {
-                        float adjustY = platformBottom - playerTop;
+                        float adjustY = platformBottom - currTop;
                         return new ControllerDirection.CollisionInfo(ControllerDirection.Direction.Bottom, 0, adjustY);
                     }
                 }
 
-                if (yCollision)
+                if (yOverlap)
                 {
-                    if (playerRight <= platformLeft && playerNewRight >= platformLeft)
+                    // Столкновение слева
+                    if (prevRight <= platformLeft && currRight >= platformLeft)
                     {
-                        float adjustX = platformLeft - playerRight;
+                        float adjustX = platformLeft - currRight;
                         return new ControllerDirection.CollisionInfo(ControllerDirection.Direction.Left, adjustX, 0);
                     }
-                    if (playerLeft >= platformRight && playerNewLeft <= platformRight)
+
+                    // Столкновение справа
+                    if (prevLeft >= platformRight && currLeft <= platformRight)
                     {
-                        float adjustX = platformRight - playerLeft;
+                        float adjustX = platformRight - currLeft;
                         return new ControllerDirection.CollisionInfo(ControllerDirection.Direction.Right, adjustX, 0);
                     }
                 }

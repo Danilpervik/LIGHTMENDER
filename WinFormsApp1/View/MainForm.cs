@@ -37,6 +37,7 @@ namespace WinFormsApp1.View
             gameController.GameState.StartGame();
             _camera = new Camera(this.ClientSize.Width, this.ClientSize.Height);
 
+            // Не создаём Graphics заранее — используем Graphics из PaintEventArgs
             _renderer = new Renderer(_camera);
             _uiRenderer = new UIRenderer();
 
@@ -82,7 +83,7 @@ namespace WinFormsApp1.View
                 _camera.Follow(playerCenterX, playerCenterY);
             }
 
-            _renderer.Clear(g, Color.Black);
+            g.Clear(Color.Black);
 
             var screenWidth = this.ClientSize.Width;
             var screenHeight = this.ClientSize.Height;
@@ -99,13 +100,21 @@ namespace WinFormsApp1.View
                 return;
             }
 
-            _renderer.DrawPlatforms(g, gameController.CurrentLevel.Platforms);
-            _renderer.DrawEnemies(g, gameController.CurrentLevel.Enemies, gameController.Player);
-            _renderer.DrawLightSwitches(g, gameController.CurrentLevel.LightSwitches);
-            _renderer.DrawEnergyOrbs(g, gameController.CurrentLevel.EnergyOrbs);
+            foreach (var platform in gameController.CurrentLevel.Platforms)
+                _renderer.DrawPlatform(g, platform);
+
+            foreach (var enemy in gameController.CurrentLevel.Enemies)
+                _renderer.DrawEnemy(g, enemy, gameController.Player);
+
+            foreach (var lightSwitch in gameController.CurrentLevel.LightSwitches)
+                _renderer.DrawSwitch(g, lightSwitch);
+            
+            foreach (var orb in gameController.CurrentLevel.EnergyOrbs)
+                _renderer.DrawOrb(g, orb);
+            
             _renderer.DrawPlayer(g, gameController.Player);
 
-            _renderer.DrawDarkness(g, gameController.Player, screenWidth, screenHeight);
+            _renderer.DrawLightRadius(g, gameController.Player);
 
             _uiRenderer.DrawEnergyBar(g, gameController.Player, 20, 20, 200, 25);
             _uiRenderer.DrawScore(g, gameController.GameState.CurrentLevelIndex + 1, 20, 55);

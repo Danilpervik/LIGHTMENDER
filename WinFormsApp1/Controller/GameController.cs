@@ -1,5 +1,4 @@
-﻿using WinFormsApp1.Controller;
-using WinFormsApp1.Model.Entities;
+﻿using WinFormsApp1.Model.Entities;
 using WinFormsApp1.Model.World;
 using WinFormsApp1.Services;
 
@@ -69,9 +68,57 @@ namespace WinFormsApp1.Controller
         {
             foreach (var enemy in currentLevel.Enemies)
             {
-                enemy.SetVisible(player);
-                enemy.SeekPlayer(player);
+                SetEnemyVisible(enemy);
+                UpdateEnemyBehavior(enemy);
                 enemy.UpdatePosition();
+            }
+        }
+
+        private void SetEnemyVisible(Enemy enemy)
+        {
+            if (enemy == null || player == null) return;
+
+            var listOfCorners = new[]
+            {
+                new Point((int)enemy.X, (int)enemy.Y),
+                new Point((int)(enemy.X + enemy.Width), (int)enemy.Y),
+                new Point((int)enemy.X, (int)(enemy.Y + enemy.Height)),
+                new Point((int)(enemy.X + enemy.Width), (int)(enemy.Y + enemy.Height))
+            };
+
+            enemy.IsVisible = listOfCorners.Any(corner =>
+            {
+                var dx = player.X - corner.X;
+                var dy = player.Y - corner.Y;
+                var distance = Math.Sqrt(dx * dx + dy * dy);
+                return distance < player.LightRadius;
+            });
+        }
+
+        private void UpdateEnemyBehavior(Enemy enemy)
+        {
+            if (enemy == null || player == null) return;
+
+            var enemyCenterX = enemy.X + enemy.Width / 2;
+            var enemyCenterY = enemy.Y + enemy.Height / 2;
+
+            var playerCenterX = player.X + player.Width / 2;
+            var playerCenterY = player.Y + player.Height / 2;
+
+            var dx = playerCenterX - enemyCenterX;
+            var dy = playerCenterY - enemyCenterY;
+            var distance = Math.Sqrt(dx * dx + dy * dy);
+
+            if (distance <= player.LightRadius)
+            {
+                if (playerCenterX < enemyCenterX)
+                    enemy.MoveLeft();
+                else if (playerCenterX > enemyCenterX)
+                    enemy.MoveRight();
+            }
+            else
+            {
+                enemy.StopMove();
             }
         }
 

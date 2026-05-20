@@ -7,7 +7,6 @@ namespace WinFormsApp1.View
     public class Renderer
     {
         private readonly Camera camera;
-        private readonly Graphics graphics;
 
         private readonly Brush playerBrush = new SolidBrush(Color.Yellow);
         private readonly Brush platformBrush = new SolidBrush(Color.Gray);
@@ -16,13 +15,12 @@ namespace WinFormsApp1.View
         private readonly Brush switchOnBrush = new SolidBrush(Color.Green);
         private readonly Brush orbBrush = new SolidBrush(Color.Cyan);
 
-        public Renderer(Graphics graphics, Camera camera)
+        public Renderer(Camera camera)
         {
-            this.graphics = graphics;
             this.camera = camera;
         }
 
-        public void DrawPlayer(Player player)
+        public void DrawPlayer(Graphics graphics, Player player)
         {
             if (player == null) return;
             if (!player.IsAlive) return;
@@ -48,7 +46,7 @@ namespace WinFormsApp1.View
             }
         }
 
-        public void DrawPlatform(Platform platform)
+        public void DrawPlatform(Graphics graphics, Platform platform)
         {
             if (platform == null) return;
 
@@ -57,7 +55,7 @@ namespace WinFormsApp1.View
 
             graphics.FillRectangle(platformBrush, screenRect.X, screenRect.Y, screenRect.Width, screenRect.Height);
 
-            if (platform.IsSlippery)
+            if (platform.Type == Platform.PlatformType.Slippery)
             {
                 using (var iceBrush = new SolidBrush(Color.LightBlue))
                 {
@@ -66,7 +64,7 @@ namespace WinFormsApp1.View
             }
         }
 
-        public void DrawEnemy(Enemy enemy, Player player)
+        public void DrawEnemy(Graphics graphics, Enemy enemy, Player player)
         {
             if (enemy == null) return;
             if (!enemy.IsActive) return;
@@ -94,7 +92,7 @@ namespace WinFormsApp1.View
             }
         }
 
-        public void DrawSwitch(LightSwitch lightSwitch)
+        public void DrawSwitch(Graphics graphics, LightSwitch lightSwitch)
         {
             if (lightSwitch == null) return;
 
@@ -113,7 +111,7 @@ namespace WinFormsApp1.View
             }
         }
 
-        public void DrawOrb(EnergyOrb orb)
+        public void DrawOrb(Graphics graphics, EnergyOrb orb)
         {
             if (orb == null) return;
             if (orb.IsCollected) return;
@@ -129,7 +127,7 @@ namespace WinFormsApp1.View
             }
         }
 
-        public void DrawLightRadius(Player player)
+        public void DrawLightRadius(Graphics graphics, Player player)
         {
             if (player == null) return;
             if (!player.IsAlive) return;

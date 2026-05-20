@@ -2,11 +2,11 @@
 
 namespace WinFormsApp1.Model.Entities;
 
-public abstract class EnemyAndPlayer : GameObject
+public abstract class ActiveGameObjects : GameObject
 {
     public float VelocityX { get; set; }
     public float Speed { get; set; }
-    public EnemyAndPlayer(float x, float y, float width, float height, float velocityX, float speed) : base(x, y, width, height)
+    public ActiveGameObjects(float x, float y, float width, float height, float velocityX, float speed) : base(x, y, width, height)
     {
         VelocityX = velocityX;
         Speed = speed;

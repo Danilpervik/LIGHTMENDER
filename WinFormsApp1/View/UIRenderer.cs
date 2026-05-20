@@ -1,4 +1,3 @@
-using System.Drawing;
 using WinFormsApp1.Model.Entities;
 
 namespace WinFormsApp1.View

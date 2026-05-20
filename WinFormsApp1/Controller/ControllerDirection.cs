@@ -11,7 +11,7 @@ namespace WinFormsApp1.Controller
             Right
         }
 
-        public struct CollisionInfo
+        public class CollisionInfo
         {
             public Direction Direction;
             public float AdjustX;

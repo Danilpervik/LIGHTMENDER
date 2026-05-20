@@ -159,23 +159,25 @@ namespace WinFormsApp1.Controller
 
         public void CheckEnemyCollision()
         {
-            if (CollisionService.CheckEnemyCollision(player, currentLevel))
+            var enemyHits = CollisionService.GetCollisions(player, currentLevel.Enemies);
+            if (enemyHits.Any())
                 gameState.GameOver();
         }
 
         public void CollectEnergyOrbs()
         {
-            var collectedOrbs = CollisionService.GetEnergyOrbCollision(player, currentLevel);
-            foreach (var orb in collectedOrbs)
+            var collectedOrbs = CollisionService.GetCollisions(player, currentLevel.EnergyOrbs);
+            foreach (var orb in collectedOrbs.ToList())
             {
                 player.AddEnergy(orb.EnergyAmount);
-                currentLevel.EnergyOrbs.Remove(orb);
+                currentLevel.RemoveEnergyOrb(orb);
             }
         }
 
         public void ActivateSwitches()
         {
-            foreach (var switchObj in CollisionService.GetLightSwitchCollision(player, currentLevel))
+            var hitSwitches = CollisionService.GetCollisions(player, currentLevel.LightSwitches);
+            foreach (var switchObj in hitSwitches)
                 switchObj.Activate();
         }
 

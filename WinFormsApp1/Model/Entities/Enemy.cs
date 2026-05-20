@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp1.Model.Entities;
 
-public class Enemy : EnemyAndPlayer
+public class Enemy : ActiveGameObjects, IActiveGameObject
 {
     public bool IsVisible { get; set; }
     public bool IsActive

@@ -16,9 +16,7 @@
             timer.Tick += (s, e) => 
             {
                 if (onTick != null)
-                {
                     onTick();
-                }
             };
         }
         public void SetOnTick(Action onTick)

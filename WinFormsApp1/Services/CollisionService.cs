@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
 using WinFormsApp1.Controller;
 using WinFormsApp1.Model.Entities;
 using WinFormsApp1.Model.World;
@@ -11,13 +9,11 @@ namespace WinFormsApp1.Services
     {
         public static ControllerDirection.CollisionInfo CheckPlatformCollision(Player player, Level level)
         {
-            // Текущая (уже обновлённая) позиция игрока
             var currTop = player.Y;
             var currLeft = player.X;
             var currRight = player.X + player.Width;
             var currBottom = player.Y + player.Height;
 
-            // Предыдущая позиция игрока (до последнего перемещения)
             var prevTop = player.Y - player.VelocityY;
             var prevLeft = player.X - player.VelocityX;
             var prevRight = prevLeft + player.Width;
@@ -30,7 +26,6 @@ namespace WinFormsApp1.Services
                 var platformTop = platform.Y;
                 var platformBottom = platform.Y + platform.Height;
 
-                // Если игрок до и после перемещения полностью слева/справа/сверху/снизу от платформы — пропускаем
                 var conditionWithoutCollision = new List<bool>
                 {
                     prevRight < platformLeft && currRight < platformLeft,
@@ -39,10 +34,9 @@ namespace WinFormsApp1.Services
                     prevTop > platformBottom && currTop > platformBottom
                 };
 
-                if (conditionWithoutCollision.Any(x => x))
+                if (conditionWithoutCollision.Exists(x => x))
                     continue;
 
-                // Проверяем перекрытие по X и Y по комбинации предыдущей/текущей позиции
                 var xOverlap = (currRight > platformLeft && currLeft < platformRight) ||
                                (prevRight > platformLeft && prevLeft < platformRight);
                 var yOverlap = (currBottom > platformTop && currTop < platformBottom) ||
@@ -50,14 +44,12 @@ namespace WinFormsApp1.Services
 
                 if (xOverlap)
                 {
-                    // Удар снизу -> приземление на платформу
                     if (prevBottom <= platformTop && currBottom >= platformTop)
                     {
                         float adjustY = platformTop - currBottom;
                         return new ControllerDirection.CollisionInfo(ControllerDirection.Direction.Top, 0, adjustY);
                     }
 
-                    // Удар сверху -> столкновение с нижней стороной платформы
                     if (prevTop >= platformBottom && currTop <= platformBottom)
                     {
                         float adjustY = platformBottom - currTop;
@@ -67,14 +59,12 @@ namespace WinFormsApp1.Services
 
                 if (yOverlap)
                 {
-                    // Столкновение слева
                     if (prevRight <= platformLeft && currRight >= platformLeft)
                     {
                         float adjustX = platformLeft - currRight;
                         return new ControllerDirection.CollisionInfo(ControllerDirection.Direction.Left, adjustX, 0);
                     }
 
-                    // Столкновение справа
                     if (prevLeft >= platformRight && currLeft <= platformRight)
                     {
                         float adjustX = platformRight - currLeft;
@@ -86,43 +76,32 @@ namespace WinFormsApp1.Services
             return new ControllerDirection.CollisionInfo(ControllerDirection.Direction.None, 0, 0);
         }
 
-        public static bool CheckEnemyCollision(Player player, Level level)
+        public static bool Intersects(GameObject firstObject, GameObject secondObject)
         {
-            var playerRectangle = player.GetBounds();
-            foreach (var enemy in level.Enemies)
-            {
-                var enemyRectangle = enemy.GetBounds();
-                if (playerRectangle.IntersectsWith(enemyRectangle))
-                    return true;
-            }
-            return false;
+            if (firstObject == null || secondObject == null)
+                return false;
+            var firstRect = firstObject.GetBounds();
+            var secondRect = secondObject.GetBounds();
+            return firstRect.IntersectsWith(secondRect);
         }
 
-        public static List<EnergyOrb> GetEnergyOrbCollision(Player player, Level level)
+        public static List<T> GetCollisions<T>(Player player, IEnumerable<T> objects) where T : GameObject
         {
-            var intersectingObjects = GetIntersectingObjects(player, level.EnergyOrbs.Cast<GameObject>().ToList());
-            return intersectingObjects.Cast<EnergyOrb>().ToList();
-        }
+            var result = new List<T>();
+            if (player == null || objects == null)
+                return result;
 
-        public static List<LightSwitch> GetLightSwitchCollision(Player player, Level level)
-        {
-            var intersectingObjects = GetIntersectingObjects(player, level.LightSwitches.Cast<GameObject>().ToList());
-            return intersectingObjects.Cast<LightSwitch>().ToList();
-        }
-
-        private static List<GameObject> GetIntersectingObjects(Player player, List<GameObject> objects)
-        {
-            var intersectingObjects = new List<GameObject>();
-            var playerRectangle = player.GetBounds();
-
+            var playerRect = player.GetBounds();
             foreach (var obj in objects)
             {
-                var objRectangle = obj.GetBounds();
-                if (playerRectangle.IntersectsWith(objRectangle))
-                    intersectingObjects.Add(obj);
+                if (obj == null)
+                    continue;
+
+                if (playerRect.IntersectsWith(obj.GetBounds()))
+                    result.Add(obj);
             }
 
-            return intersectingObjects;
+            return result;
         }
     }
 }

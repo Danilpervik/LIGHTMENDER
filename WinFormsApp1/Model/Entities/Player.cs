@@ -1,8 +1,6 @@
-﻿using WinFormsApp2.Model.Entities;
+﻿namespace WinFormsApp1.Model.Entities;
 
-namespace WinFormsApp1.Model.Entities;
-
-public class Player : EnemyAndPlayer
+public class Player : ActiveGameObjects, IActiveGameObject
 {
     public float Energy { get; set; }
     public float LightRadius { get; set; }

@@ -1,12 +1,10 @@
-using System.Windows.Forms;
-
 namespace WinFormsApp1.Controller
 {
     public class InputHandler
     {
-        private bool isLeftPressed = false;
-        private bool isRightPressed = false;
-        private bool isJumpPressed = false;
+        private bool isLeftPressed;
+        private bool isRightPressed;
+        private bool isJumpPressed;
 
         public void KeyDown(Keys key)
         {
